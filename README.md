@@ -12,3 +12,6 @@ Some requirements for this project:
     pyjnius
     nnet (a python library)
     scikit-learn (a python library)
+    android SDK
+    android NDK
+    a suitable linux operating system

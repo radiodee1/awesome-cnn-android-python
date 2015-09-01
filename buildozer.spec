@@ -82,13 +82,13 @@ android.ndk = 10e
 android.private_storage = False
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path =/home/dave/bin/android-ndk-r10e/
+android.ndk_path =~/bin/android-ndk-r10e/
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
-android.sdk_path =/home/dave/bin/Android/Sdk/
+android.sdk_path =~/bin/Android/Sdk/
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
-android.p4a_dir =/home/dave/workspace/python-for-android/
+android.p4a_dir =~/workspace/python-for-android/
 
 # (list) python-for-android whitelist
 #android.p4a_whitelist = theano
