@@ -1,6 +1,0 @@
-start stamp -- 2015-08-11 08:25:45.884517
-1 of 31 batches (batch size=32), iter 1 with total of 10
-start stamp -- 2015-08-11 09:17:49.498832
-1 of 31 batches (batch size=32), iter 1 with total of 10
-2 of 31 batches (batch size=32), iter 1 with total of 10
-iter 1, loss 1.3452, train error 0.3367 - 300 imgs

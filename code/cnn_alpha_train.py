@@ -100,6 +100,7 @@ def run(max_iter=10, n_train_samples=300):
     
     # Train neural network
     t0 = time.time()
+    nn.set_android_load(False)
     if n_train_samples != 300 and False : nn.set_interrupt(True)
     if max_iter < 0 :
         X = X_train

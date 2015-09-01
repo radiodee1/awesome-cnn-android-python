@@ -64,6 +64,7 @@ def run():
         ],
     )
     
+    nn1.set_android_load(False)
     nn1._setup(X_setup, y_setup)
     nn1.load_file(name=name)
     

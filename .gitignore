@@ -1,5 +1,8 @@
 code/.idea/
 code/*.pyo
+code/nnet/*.pyc
+code/status-*.txt
+
 bin/
 .buildozer/
 
