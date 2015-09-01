@@ -30,7 +30,7 @@ cd $BUILDOZERDIR
 
 
 
-buildozer -v android release
+buildozer -v android debug
 
 #cd ~/workspace/python-for-android/
 #./distribute.sh -m "kivy==master"
