@@ -7,8 +7,10 @@ import sklearn.datasets
 import nnet.neuralnetwork as cnnet
 import nnet.convnet.layers as conv
 import nnet.layers as lnnet
+import enum_local as LOAD
+import load_png_alpha as lp
 
-def run():
+def run(max_iter=10, n_train_samples=300):
 
     def signal_handler(signal, frame) :
         print(" you want to exit!")
@@ -32,8 +34,9 @@ def run():
     y_test = mnist.target[split:]
     n_classes = np.unique(y_train).size
 
+    n_classes = len(lp.ascii_ymatrix(LOAD.NUMERIC))
     # Downsample training data
-    n_train_samples = 1000 #3000
+    #n_train_samples = 1000 #3000
     train_idxs = np.random.random_integers(0, split-1, n_train_samples)
     #train_idxs = np.array([i for i in range(n_train_samples)])
     X_train = X_train[train_idxs, ...]
@@ -63,20 +66,40 @@ def run():
                 weight_scale=0.1,
                 weight_decay=0.001,
             ),
+            
             lnnet.Activation('relu'),
             conv.Flatten(),
+            
+            #lnnet.Linear(
+            #    n_out=500,
+            #    weight_scale=0.1,
+            #    weight_decay=0.02,
+            #),
+            
+            #lnnet.Activation('relu'),
+            
             lnnet.Linear(
                 n_out=n_classes,
                 weight_scale=0.1,
                 weight_decay=0.02,
             ),
+            
             lnnet.LogRegression(),
         ],
     )
 
     # Train neural network
     t0 = time.time()
-    nn.fit(X_train, y_train, learning_rate=0.05, max_iter=10, batch_size=32, name=name)
+    if max_iter < 0 :
+        X = X_train
+        Y = y_train
+        Y_one_hot = one_hot(Y , load_type=LOAD.NUMERIC)
+        nn.set_name(name)
+        nn._setup(X, Y_one_hot)
+        nn.load_file(name=name)
+        nn.status(-1,X,Y,Y_one_hot) ##end
+    else:
+        nn.fit(X_train, y_train, learning_rate=0.05, max_iter=max_iter, batch_size=64, name=name, load_type=LOAD.NUMERIC)
     t1 = time.time()
     print('Duration: %.1fs' % (t1-t0))
 
@@ -87,4 +110,14 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    max_iter = 1
+    n_train_samples = 300
+    ln = len(sys.argv)
+    if ln >= 2 : max_iter = int(sys.argv[1])
+    if ln >= 3 : n_train_samples = int(sys.argv[2])
+    if ln == 1 :
+        print("usage: " + sys.argv[0] +" <max-iter> <training-samples>")
+        print("negative max-iter skips fitting function!")
+    run(max_iter=max_iter, n_train_samples=n_train_samples)
+    
+    

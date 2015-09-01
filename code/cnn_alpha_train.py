@@ -17,7 +17,7 @@ def run(max_iter=10, n_train_samples=300):
     print str(datetime.datetime.now())
     
     def signal_handler(signal, frame) :
-        print(" you want to exit!")
+        print(" \n...you want to exit!")
         for layer in nn.layers:
             if (isinstance(layer, lnnet.ParamMixin)) : print "len: " + str(len(layer.W))
         if True  :
@@ -75,13 +75,24 @@ def run(max_iter=10, n_train_samples=300):
                 weight_scale=0.1,
                 weight_decay=0.001,
             ),
+            
             lnnet.Activation('relu'),
             conv.Flatten(),
+            
+            #lnnet.Linear(
+            #    n_out=500,
+            #    weight_scale=0.1,
+            #    weight_decay=0.02,
+            #),
+            
+            #lnnet.Activation('relu'),
+            
             lnnet.Linear(
                 n_out=n_classes,
                 weight_scale=0.1,
                 weight_decay=0.02,
             ),
+            
             lnnet.LogRegression(),
         ],
     )
@@ -119,3 +130,4 @@ if __name__ == '__main__':
         print("usage: " + sys.argv[0] +" <max-iter> <training-samples>")
         print("negative max-iter skips fitting function!")
     run(max_iter=max_iter, n_train_samples=n_train_samples)
+    

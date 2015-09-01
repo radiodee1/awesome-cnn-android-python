@@ -42,13 +42,24 @@ def run():
                 weight_scale=0.1,
                 weight_decay=0.001,
             ),
+            
             lnnet.Activation('relu'),
             conv.Flatten(),
+            
+            #lnnet.Linear(
+            #    n_out=500,
+            #    weight_scale=0.1,
+            #    weight_decay=0.02,
+            #),
+            
+            #lnnet.Activation('relu'),
+            
             lnnet.Linear(
                 n_out=n_classes,
                 weight_scale=0.1,
                 weight_decay=0.02,
             ),
+            
             lnnet.LogRegression(),
         ],
     )

@@ -16,7 +16,7 @@ class NeuralNetwork:
         self.name = "mnist"
         self.interrupt = False
         self.android_load = False
-        self.nn_dir = "../../nn/"
+        self.nn_dir = "../res/"
 
     def _setup(self, X, Y):
         # Setup layers sequentially
@@ -139,8 +139,9 @@ class NeuralNetwork:
             if isinstance(layer, ParamMixin):
                 W, b = layer.params()
 
-                '''
+                
                 if not self.android_load :
+                    
                     shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
                     np.savetxt(shapew1, W.shape)
                     shapeb1 = str(self.nn_dir+name+'_shape_b'+str(level)+'.txt')
@@ -151,18 +152,9 @@ class NeuralNetwork:
                     textb1 = str(self.nn_dir+name+'_b'+str(level)+'.txt')
                     bout , xshape = store.store_b(b)
                     np.savetxt(textb1, bout)
-                '''
-                if False:
-                    pass
-                    '''
-                    # pickle W and b
-                    f1 = file(str(self.nn_dir+name+'-weights'+ str(level) +'.save'), 'wb')
-                    cPickle.dump(W, f1, protocol=cPickle.HIGHEST_PROTOCOL)
-                    f1.close()
-                    f2 = file(str(self.nn_dir+name+'-bias'+ str(level) +'.save'), 'wb')
-                    cPickle.dump(b, f2, protocol=cPickle.HIGHEST_PROTOCOL)
-                    f2.close()
-                    '''
+                    print (str (level) + " save.")
+                
+                
                 
         
         
@@ -170,25 +162,8 @@ class NeuralNetwork:
         print(name)
         for i in range(len(self.layers)):
             if isinstance(self.layers[i], ParamMixin):
-                if False: ## convert old pickle files to new format...
-                    pass
-                    '''
-                    path1 = str(self.nn_dir+name+"-weights" + str(i+1) + ".save")
-                    if os.path.exists(path1):
-                        f1 = file(path1, 'rb')
-                        loaded_obj1 = cPickle.load(f1)
-                        f1.close()
-                        self.layers[i].W = loaded_obj1
-                        print ("load " + path1)
-                    path2 = str(self.nn_dir+name+"-bias" + str(i+1) + ".save")
-                    if os.path.exists(path2):
-                        f2 = file(path2, 'rb')
-                        loaded_obj2 = cPickle.load(f2)
-                        f2.close()
-                        self.layers[i].b = loaded_obj2
-                        print ("load " + path2)
-                    '''
-                    
+                
+                
                 if not self.android_load :
                     ## load text files...
                     print( i + 1)
@@ -246,11 +221,12 @@ class NeuralNetwork:
     def append_status(self, name, message):
         if not self.android_load :
             print (message)
-            '''
-            message = message + "\n"
-            filename = "status-" + name.strip() +".txt"
-            f = open(filename, 'a')
-            f.write(message)
-            f.close()
-            '''
+            
+            if not self.android_load:
+                message = message + "\n"
+                filename = "status-" + name.strip() +".txt"
+                f = open(filename, 'a')
+                f.write(message)
+                f.close()
+            
 
