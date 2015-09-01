@@ -1,0 +1,51 @@
+This .apk coincides with revision #? in the git repository.
+
+1.0.0.20150829
+
+version code 1
+
+I created a keystore called 'awesomecnn.keystore'
+
+The keystore password is 'somethingnew'. I reused the password later.
+
+keystore password:
+somethingnew
+
+Info on the key, that I filled in on a dialog box:
+
+key password:
+somethingnew
+
+key alias:
+awesomecnn
+
+First and Last Name:
+David Liebman
+
+Organizational Unit:
+none
+
+Organization:
+none
+
+City or Locality:
+Saugerties
+
+State or Provance:
+New York
+
+Country Code (XX):
+US
+
+file name:
+AwesomeCNN-1.0.0.20150829-release.apk
+
+--------------------------
+This app was uploaded to the market site and published.
+
+
+the file 'url_chart.png' is a 2D barcode for the following info:
+
+--none--
+
+

@@ -1,0 +1,191 @@
+stamp -- 2015-08-08 09:37:45.059945
+1 of 3 batches, iter 1 with total of 5
+2 of 3 batches, iter 1 with total of 5
+3 of 3 batches, iter 1 with total of 5
+iter 1, loss 2.5631, train error 0.6200
+1 of 3 batches, iter 2 with total of 5
+2 of 3 batches, iter 2 with total of 5
+3 of 3 batches, iter 2 with total of 5
+iter 2, loss 2.2129, train error 0.5400
+1 of 3 batches, iter 3 with total of 5
+2 of 3 batches, iter 3 with total of 5
+3 of 3 batches, iter 3 with total of 5
+iter 3, loss 1.9297, train error 0.4700
+1 of 3 batches, iter 4 with total of 5
+2 of 3 batches, iter 4 with total of 5
+3 of 3 batches, iter 4 with total of 5
+iter 4, loss 1.6313, train error 0.3700
+1 of 3 batches, iter 5 with total of 5
+2 of 3 batches, iter 5 with total of 5
+3 of 3 batches, iter 5 with total of 5
+iter 5, loss 1.3455, train error 0.3000
+stamp -- 2015-08-08 10:21:54.540243
+1 of 4 batches (size=64), iter 1 with total of 5
+2 of 4 batches (size=64), iter 1 with total of 5
+3 of 4 batches (size=64), iter 1 with total of 5
+4 of 4 batches (size=64), iter 1 with total of 5
+iter 1, loss 2.7476, train error 0.6633
+1 of 4 batches (size=64), iter 2 with total of 5
+2 of 4 batches (size=64), iter 2 with total of 5
+3 of 4 batches (size=64), iter 2 with total of 5
+4 of 4 batches (size=64), iter 2 with total of 5
+iter 2, loss 2.5464, train error 0.6200
+1 of 4 batches (size=64), iter 3 with total of 5
+stamp -- 2015-08-08 11:10:35.355031
+1 of 4 batches (batch size=64), iter 1 with total of 5
+2 of 4 batches (batch size=64), iter 1 with total of 5
+3 of 4 batches (batch size=64), iter 1 with total of 5
+4 of 4 batches (batch size=64), iter 1 with total of 5
+iter 1, loss 2.7264, train error 0.6467
+1 of 4 batches (batch size=64), iter 2 with total of 5
+start stamp -- 2015-08-08 11:33:20.010276
+1 of 4 batches (batch size=64), iter 1 with total of 5
+2 of 4 batches (batch size=64), iter 1 with total of 5
+3 of 4 batches (batch size=64), iter 1 with total of 5
+4 of 4 batches (batch size=64), iter 1 with total of 5
+iter 1, loss 2.5002, train error 0.6000
+1 of 4 batches (batch size=64), iter 2 with total of 5
+2 of 4 batches (batch size=64), iter 2 with total of 5
+3 of 4 batches (batch size=64), iter 2 with total of 5
+4 of 4 batches (batch size=64), iter 2 with total of 5
+iter 2, loss 2.2987, train error 0.5500
+1 of 4 batches (batch size=64), iter 3 with total of 5
+2 of 4 batches (batch size=64), iter 3 with total of 5
+3 of 4 batches (batch size=64), iter 3 with total of 5
+4 of 4 batches (batch size=64), iter 3 with total of 5
+iter 3, loss 2.1227, train error 0.5067
+1 of 4 batches (batch size=64), iter 4 with total of 5
+start stamp -- 2015-08-08 12:43:45.623568
+1 of 46 batches (batch size=64), iter 1 with total of 5
+2 of 46 batches (batch size=64), iter 1 with total of 5
+3 of 46 batches (batch size=64), iter 1 with total of 5
+start stamp -- 2015-08-08 12:54:30.290031
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+3 of 46 batches (batch size=64), iter 1 with total of 1
+4 of 46 batches (batch size=64), iter 1 with total of 1
+5 of 46 batches (batch size=64), iter 1 with total of 1
+6 of 46 batches (batch size=64), iter 1 with total of 1
+7 of 46 batches (batch size=64), iter 1 with total of 1
+8 of 46 batches (batch size=64), iter 1 with total of 1
+9 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 13:20:44.979556
+1 of 4 batches (batch size=64), iter 1 with total of 10
+start stamp -- 2015-08-08 13:28:51.983513
+1 of 4 batches (batch size=64), iter 1 with total of 10
+2 of 4 batches (batch size=64), iter 1 with total of 10
+start stamp -- 2015-08-08 13:34:49.333799
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+3 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 13:43:35.636330
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 13:49:03.426720
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+3 of 46 batches (batch size=64), iter 1 with total of 1
+4 of 46 batches (batch size=64), iter 1 with total of 1
+5 of 46 batches (batch size=64), iter 1 with total of 1
+6 of 46 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.4087, train error 0.5830
+7 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 15:51:27.401110
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.4425, train error 0.5667
+start stamp -- 2015-08-08 16:15:18.833059
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 16:16:12.266771
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-08 16:18:02.765565
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.0627, train error 0.5133 - 300 imgs
+start stamp -- 2015-08-08 18:39:14.295294
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+3 of 46 batches (batch size=64), iter 1 with total of 1
+4 of 46 batches (batch size=64), iter 1 with total of 1
+5 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-09 08:13:46.570904
+1 of 46 batches (batch size=64), iter 1 with total of 1
+2 of 46 batches (batch size=64), iter 1 with total of 1
+3 of 46 batches (batch size=64), iter 1 with total of 1
+4 of 46 batches (batch size=64), iter 1 with total of 1
+5 of 46 batches (batch size=64), iter 1 with total of 1
+periodic save...
+6 of 46 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:02:39.446327
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:04:08.874566
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:25:08.809235
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:25:58.199071
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:26:38.415816
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:31:48.072967
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:35:44.581457
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:40:14.386350
+start stamp -- 2015-08-10 11:41:00.552026
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:41:34.378092
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 11:42:27.980722
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.1629, train error 0.5000 - 300 imgs
+start stamp -- 2015-08-10 14:20:40.131473
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 14:25:39.060514
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 16:49:06.145652
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 16:49:57.071269
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 17:07:49.541591
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 17:08:11.038258
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 17:11:37.326878
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 17:11:50.609193
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-10 17:12:20.366145
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.1860, train error 0.5033 - 300 imgs
+start stamp -- 2015-08-10 18:44:37.312869
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 2.1510, train error 0.5133 - 300 imgs
+start stamp -- 2015-08-10 19:07:29.460008
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-11 09:14:17.171460
+1 of 4 batches (batch size=64), iter 1 with total of 1
+start stamp -- 2015-08-11 09:21:19.105810
+1 of 4 batches (batch size=64), iter 1 with total of 1
+2 of 4 batches (batch size=64), iter 1 with total of 1
+3 of 4 batches (batch size=64), iter 1 with total of 1
+4 of 4 batches (batch size=64), iter 1 with total of 1
+iter 1, loss 0.8376, train error 0.2033 - 300 imgs
+iter -1, loss 1.3088, train error 0.3300 - 300 imgs
+iter -1, loss 1.1454, train error 0.3333 - 30 imgs
+iter -1, loss 5.9105, train error 0.9833 - 300 imgs
+start stamp -- 2015-08-11 14:05:26.538164
+1 of 4 batches (batch size=64), iter 1 with total of 1
+iter -1, loss 1.3799, train error 0.3667 - 300 imgs
