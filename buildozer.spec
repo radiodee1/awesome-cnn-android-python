@@ -23,7 +23,7 @@ source.exclude_dirs = mldata
 #tests, bin
 
 # (list) List of exclusions using pattern matching
-source.exclude_patterns = data/mldata/*.mat
+source.exclude_patterns = data/mldata/*.mat,code/cnn_alpha*.py,code/cnn_mnist*.py
 #license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
