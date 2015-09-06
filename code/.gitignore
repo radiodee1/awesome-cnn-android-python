@@ -1,2 +1,5 @@
 data/mldata/mnist-original.mat
-
+build/
+dist/
+nnet.egg-info/
+nnet/convnet/*.c

@@ -20,7 +20,7 @@ cd $JAVADIR
 cd $BUILDOZERDIR
 
 mkdir -p $RESDIR 
-mkdir -p $PY4ADIR/src/res/raw/
+#mkdir -p $PY4ADIR/src/res/raw/
 
 cd $PY4ADIR/src/res/
 mkdir -p raw

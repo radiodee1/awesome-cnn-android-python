@@ -1,9 +1,18 @@
 import numpy as np
 
 from ..layers import Layer, ParamMixin
-from .conv import conv_bc01, bprop_conv_bc01
-from .pool import pool_bc01, bprop_pool_bc01
 
+try:
+    import pyximport; pyximport.install()
+
+    from .convx import conv_bc01, bprop_conv_bc01
+    from .poolx import pool_bc01, bprop_pool_bc01
+    print("pyx files imported")
+
+except:
+    from .conv import conv_bc01, bprop_conv_bc01
+    from .pool import pool_bc01, bprop_pool_bc01
+    print("skip pyx file import")
 
 class Conv(Layer, ParamMixin):
     def __init__(self, n_feats, filter_shape, strides, weight_scale,
