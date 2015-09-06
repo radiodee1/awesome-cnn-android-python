@@ -3,7 +3,7 @@
 import os
 import numpy as np
 from setuptools import setup, find_packages
-from Cython.Build import cythonize
+#from Cython.Build import cythonize
 
 
 def read(fname):
@@ -30,8 +30,8 @@ setup(
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
     ],
-    ext_modules = cythonize(['nnet/convnet/convx.pyx',
-                             'nnet/convnet/poolx.pyx']),
+    #ext_modules = cythonize(['nnet/convnet/convx.pyx',
+    #                         'nnet/convnet/poolx.pyx']),
     include_dirs = [np.get_include()]
 )
 
