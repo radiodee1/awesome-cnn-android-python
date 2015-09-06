@@ -138,6 +138,22 @@ class NeuralNetwork:
             level += 1
             if isinstance(layer, ParamMixin):
                 W, b = layer.params()
+                
+                if not self.android_load :
+                    shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
+                    np.savetxt(shapew1, W.shape)
+                    shapeb1 = str(self.nn_dir+name+'_shape_b'+str(level)+'.txt')
+                    np.savetxt(shapeb1, b.shape)
+                    textw1 = str(self.nn_dir+name+'_w'+str(level)+'.txt')
+                    Wout, xshape = store.store_w(W)
+                    np.savetxt(textw1, Wout)
+                    textb1 = str(self.nn_dir+name+'_b'+str(level)+'.txt')
+                    bout , xshape = store.store_b(b)
+                    np.savetxt(textb1, bout)
+                    print (str (level) + " save.")
+            
+                '''
+                W, b = layer.params()
 
                 
                 if not self.android_load :
@@ -153,7 +169,7 @@ class NeuralNetwork:
                     bout , xshape = store.store_b(b)
                     np.savetxt(textb1, bout)
                     print (str (level) + " save.")
-                
+                '''
                 
                 
         
@@ -187,11 +203,13 @@ class NeuralNetwork:
                 elif self.android_load :
 
                     try:
+                        
                         GetText = jnius.autoclass("org.renpy.android.GetText")
                         PythonActivity = jnius.autoclass('org.renpy.android.PythonActivity')
 
                         currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
-
+                        
+                        
                         loader = GetText()
                         textw1 = str(name+'_w'+str(i+1))
                         shapew1 = str(name+'_shape_w'+str(i+1))
@@ -214,6 +232,8 @@ class NeuralNetwork:
 
                         self.layers[i].W = store.unstore_w(Win,Wshapein)
                         self.layers[i].b = store.unstore_b(bin,bshapein)
+                        
+                        
                     except:
                         #exit()
                         print("not loading android weights")
@@ -221,12 +241,10 @@ class NeuralNetwork:
     def append_status(self, name, message):
         if not self.android_load :
             print (message)
-            
-            if not self.android_load:
-                message = message + "\n"
-                filename = "status-" + name.strip() +".txt"
-                f = open(filename, 'a')
-                f.write(message)
-                f.close()
-            
+            time = "[" + str(datetime.datetime.now()) + "]"
+            message = time + "  " + message + "\n"
+            filename = "status-" + name.strip() +".txt"
+            f = open(filename, 'a')
+            f.write(message)
+            f.close()
 

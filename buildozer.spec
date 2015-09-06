@@ -31,7 +31,7 @@ source.exclude_patterns = data/mldata/*.mat,code/cnn_alpha*.py,code/cnn_mnist*.p
 #version.filename = %(source.dir)s/main.py
 
 # (str) Application versioning (method 2)
-version = 1.0.0.20150829
+version = 1.0.0.20150906
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy,theano
@@ -79,7 +79,7 @@ android.sdk = 21
 android.ndk = 10e
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
-android.private_storage = False
+android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
 android.ndk_path =~/bin/android-ndk-r10e/
@@ -94,7 +94,7 @@ android.p4a_dir =~/workspace/python-for-android/
 #android.p4a_whitelist = theano
 
 # (str) Android entry point, default is ok for Kivy-based app
-#android.entrypoint = org.davidliebman.android.IME
+#android.entrypoint = org.davidliebman.android.CNN
 
 # (list) List of Java .jar files to add to the libs so that pyjnius can access
 # their classes. Don't add jars that you do not need, since extra jars can slow
