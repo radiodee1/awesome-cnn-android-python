@@ -34,10 +34,7 @@ cd $BUILDOZERDIR
 
 buildozer -v android debug
 
-#cd ~/workspace/python-for-android/
-#./distribute.sh -m "kivy==master"
-# numpy"
-# sqlite3 pil nnet"
+
 
 
 
