@@ -77,6 +77,7 @@ class DualCNN :
             ],
         )
         
+        self.nn_a.set_name(self.name_a)
         self.nn_a._setup(X_setup_a, y_setup_a)
         self.nn_a.set_android_load(self.android_load)
 
@@ -113,6 +114,7 @@ class DualCNN :
             ],
         )
         
+        self.nn_n.set_name(self.name_n)
         self.nn_n._setup(X_setup_n, y_setup_n)
         self.nn_n.set_android_load(self.android_load)
 
