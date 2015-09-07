@@ -10,7 +10,7 @@ import nnet.layers as lnnet
 import math, sys
 #from nnet.helpers import one_hot, unhot
 import enum_local as LOAD
-import load_png_alpha as lp
+#import load_png_alpha as lp
 
 
 class DualCNN :
@@ -30,13 +30,13 @@ class DualCNN :
     def run(self):
         load_type_a = LOAD.ALPHA
         
-        n_classes_a = len(lp.ascii_ymatrix(load_type_a))
+        n_classes_a = len(ascii_ymatrix(load_type_a))
         X_setup_a = np.zeros(shape=(1,1,28,28))
         y_setup_a = np.zeros(shape=(1,n_classes_a))
         
         load_type_n = LOAD.NUMERIC
         
-        n_classes_n = len(lp.ascii_ymatrix(load_type_n))
+        n_classes_n = len(ascii_ymatrix(load_type_n))
         X_setup_n = np.zeros(shape=(1,1,28,28))
         y_setup_n = np.zeros(shape=(1,n_classes_n))
         
@@ -177,7 +177,7 @@ class DualCNN :
         self.X_in = xin
 
     def show_ycharacter( self, l):
-        mat = lp.ascii_ymatrix(self.input_type)[l][1]
+        mat = ascii_ymatrix(self.input_type)[l][1]
         return mat
 
 ###########################
@@ -210,13 +210,36 @@ def show_xvalues(xarray = [[]], index = 0):
     print ("\n===========================\n")
 
 
+def ascii_ymatrix(alphabet_set=LOAD.ALPHANUMERIC ) :
+    mat = []
+    a_upper = 65 ## ascii for 'A'
+    a_lower = 97 ## ascii for 'a'
+    z_digit = 48 ## ascii for '0'
+    
+    if alphabet_set == LOAD.ALPHANUMERIC or alphabet_set == LOAD.ALPHA :
+        for i in range(0,26):
+            value = int(a_upper + i) , str(unichr(a_upper+i))
+            mat.append(value)
+        for i in range(0,26):
+            value = int(a_lower + i) , str(unichr(a_lower+i))
+            mat.append(value)
 
+    if alphabet_set == LOAD.ALPHANUMERIC or alphabet_set == LOAD.NUMERIC : ## do not seperate nums and alphabet yet.
+        for i in range(0,10):
+            value = int(z_digit + i) , str(unichr(z_digit+i))
+            mat.append(value)
+    if len(mat) == 0 :
+        print ("load type " + str(alphabet_set)), LOAD.ALPHA , LOAD.NUMERIC, LOAD.ALPHANUMERIC
+        raise RuntimeError
+    #print(len(mat))
+    return mat
 
 
 if __name__ == '__main__':
     cnn = DualCNN()
     
     while cnn.get_still_looping() :
+        print("loop")
         cnn.game_loop()
     
     

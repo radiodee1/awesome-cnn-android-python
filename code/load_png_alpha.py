@@ -1,7 +1,7 @@
 import numpy
 #import pylab
 from PIL import Image
-import cPickle
+#import cPickle
 import gzip
 import os
 import sys
