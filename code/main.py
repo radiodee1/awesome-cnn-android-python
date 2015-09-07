@@ -6,7 +6,7 @@ import os, math
 
 import cnn_both as nn
 import enum_local as LOAD
-#from nnet.convnet import pool, conv
+
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.relativelayout import RelativeLayout
@@ -19,10 +19,10 @@ from kivy.clock import Clock
 from kivy.graphics import *
 from kivy.graphics.texture import Texture
 
-try:
-    import android
-except:
-    pass
+#try:
+#    import android
+#except:
+#    pass
 
 
 class IMEApp(App):

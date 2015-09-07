@@ -44,14 +44,4 @@ def store(x):
     return out, shape
     
     
-if __name__ == '__main__':
-    shape = (4,3,2,2)
-    x = np.zeros(shape=(4,3,2,2))
-    z = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
-    shape2 = z.shape
-    print z, shape2
-    z2 , s = store(z)
-    
-    print z2
-    z2 = unstore_w(z2, shape2)
-    print z2
+
