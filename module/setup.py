@@ -30,8 +30,8 @@ setup(
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
     ],
-    ext_modules = cythonize(['nnet/convnet/conv.pyx',
-                             'nnet/convnet/pool.pyx']),
+    ext_modules = cythonize(['nnet/convnet/convx.pyx',
+                             'nnet/convnet/poolx.pyx']),
     include_dirs = [np.get_include()]
 )
 
