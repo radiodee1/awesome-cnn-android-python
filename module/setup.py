@@ -12,7 +12,7 @@ def read(fname):
 print(find_packages())
 setup(
     name = 'awesomecnn',
-    version = '0.1',
+    version = '0.4',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
     description = "Neural networks in NumPy/Cython",
@@ -29,9 +29,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
-    ],
-    ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
-                             'awesomecnn/convnet/poolx.pyx'])#,
+    ]#,
+#    ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
+#                             'awesomecnn/convnet/poolx.pyx'])#,
 #    include_dirs = [np.get_include()]
 )
 

@@ -1,15 +1,15 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.4
-URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/$VERSION_awesomecnn.zip
+VERSION_awesomecnn=0.5
+URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
 DEPS_awesomecnn=(python numpy)
 MD5_awesomecnn=
-BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)/module
+BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
 
 function prebuild_awesomecnn() {
-	cd $BUILD_awesomecnn
+	cd $BUILD_awesomecnn/module
 
 	# check marker in our source build
 	if [ -f .patched ]; then
@@ -32,7 +32,7 @@ function shouldbuild_awesomecnn() {
 }
 
 function build_awesomecnn() {
-	cd $BUILD_awesomecnn
+	cd $BUILD_awesomecnn/module
 
 	push_arm
 
@@ -45,17 +45,18 @@ function build_awesomecnn() {
 	#try $HOSTPYTHON setup.py install -02
 
 	try find . -iname '*.pyx' -exec $CYTHON {} \;
-	try $HOSTPYTHON setup.py build_ext -v
-	try find build/lib.* -name "*.o" -exec $STRIP {} \;
+	#try $HOSTPYTHON setup.py build_ext -v
+	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
-	try $HOSTPYTHON setup.py install -O2 --root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
+	try $HOSTPYTHON setup.py install -O2 
+	#--root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
 
 	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/docs
-	try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/examples
+	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/examples
 	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/tests
 	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/gp2x
 
-	unset LDSHARED
+	#unset LDSHARED
 	pop_arm
 }
 
