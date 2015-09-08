@@ -9,7 +9,7 @@ RESDIR=`pwd`/res
 
 PY4ADIR=~/workspace/python-for-android/
 
-#cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
+cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
 
 PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
 
