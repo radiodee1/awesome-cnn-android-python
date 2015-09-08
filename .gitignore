@@ -1,16 +1,28 @@
 code/.idea/
 code/*.pyo
-code/nnet/*.pyc
+code/awesomecnn/*.pyc
 code/status-*.txt
+
+module/.idea/
+module/*.pyo
+module/awesomecnn/*.pyc
+module/status-*.txt
 
 bin/
 .buildozer/
 
+module/<prop*/
+module/data/mldata/
+
 code/<prop*/
 code/data/mldata/
 
+
 *.pyc
+module/examples/data/mldata/
 code/examples/data/mldata/
+module/awesomecnn.egg*
+
 res/alpha*
 res/mnist*
 res/
