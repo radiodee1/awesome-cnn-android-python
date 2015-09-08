@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.3
-URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v0.3.zip
+VERSION_awesomecnn=0.4
+URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/$VERSION_awesomecnn.zip
 
 DEPS_awesomecnn=(python numpy)
 MD5_awesomecnn=

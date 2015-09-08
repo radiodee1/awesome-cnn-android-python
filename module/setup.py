@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import numpy as np
+#import numpy as np
 from setuptools import setup, find_packages
 from Cython.Build import cythonize
 
@@ -31,7 +31,7 @@ setup(
         'Topic :: Scientific/Engineering',
     ],
     ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
-                             'awesomecnn/convnet/poolx.pyx']),
-    include_dirs = [np.get_include()]
+                             'awesomecnn/convnet/poolx.pyx'])#,
+#    include_dirs = [np.get_include()]
 )
 
