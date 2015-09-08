@@ -2,23 +2,23 @@
 
 import os
 #import numpy as np
-from setuptools import setup, find_packages
+from setuptools import setup #, find_packages
 from Cython.Build import cythonize
 
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-print(find_packages())
+#print(find_packages())
 setup(
     name = 'awesomecnn',
-    version = '0.4',
+    version = '0.5',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
     description = "Neural networks in NumPy/Cython",
     license = 'MIT',
     url = 'http://compute.dtu.dk/~abll',
-    packages = find_packages(),
+    packages = ['awesomecnn'],# find_packages(),
     install_requires = ['numpy', 'cython'], ## 'scipy'
     long_description = read('README.md'),
     classifiers = [

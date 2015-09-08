@@ -3,7 +3,7 @@
 VERSION_awesomecnn=0.5
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
-DEPS_awesomecnn=(python numpy)
+DEPS_awesomecnn=(python numpy kivy pil pyjnius)
 MD5_awesomecnn=
 BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
@@ -44,7 +44,7 @@ function build_awesomecnn() {
 	#export LDSHARED="$LIBLINK"
 	#try $HOSTPYTHON setup.py install -02
 
-	try find . -iname '*.pyx' -exec $CYTHON {} \;
+	#try find . -iname '*.pyx' -exec $CYTHON {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
 	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
