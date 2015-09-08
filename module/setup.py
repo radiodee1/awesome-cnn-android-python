@@ -11,7 +11,7 @@ def read(fname):
 
 print(find_packages())
 setup(
-    name = 'nnet',
+    name = 'awesomecnn',
     version = '0.1',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
@@ -30,8 +30,8 @@ setup(
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
     ],
-    ext_modules = cythonize(['nnet/convnet/convx.pyx',
-                             'nnet/convnet/poolx.pyx']),
+    ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
+                             'awesomecnn/convnet/poolx.pyx']),
     include_dirs = [np.get_include()]
 )
 
