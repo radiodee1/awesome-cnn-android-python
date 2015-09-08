@@ -1,10 +1,10 @@
 #!/bin/bash
 
 VERSION_awesomecnn=0.1
-URL_awesomecnn=https://github.com/andersbll/awesomecnn/archive/master.zip
+URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v0.2.zip
 
 DEPS_awesomecnn=(python numpy)
-MD5_awesomecnn=180c07445219c7a61c0e8f5a065047b5
+MD5_awesomecnn=
 BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)/module
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
 
