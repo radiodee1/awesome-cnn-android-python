@@ -19,7 +19,7 @@ setup(
     license = 'MIT',
     url = 'http://compute.dtu.dk/~abll',
     packages = find_packages(),
-    install_requires = ['numpy', 'scipy', 'cython'],
+    install_requires = ['numpy', 'cython'], ## 'scipy'
     long_description = read('README.md'),
     classifiers = [
         'Development Status :: 4 - Beta',
