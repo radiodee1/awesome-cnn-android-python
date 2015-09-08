@@ -1,15 +1,15 @@
 #!/bin/bash
 
-VERSION_nnet=0.1
-URL_nnet=https://github.com/andersbll/nnet/archive/master.zip
+VERSION_awesomecnn=0.1
+URL_awesomecnn=https://github.com/andersbll/awesomecnn/archive/master.zip
 
-DEPS_nnet=(python numpy)
-MD5_nnet=180c07445219c7a61c0e8f5a065047b5
-BUILD_nnet=$BUILD_PATH/nnet/$(get_directory $URL_nnet)
-RECIPE_nnet=$RECIPES_PATH/nnet
+DEPS_awesomecnn=(python numpy)
+MD5_awesomecnn=180c07445219c7a61c0e8f5a065047b5
+BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)/module
+RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
 
-function prebuild_nnet() {
-	cd $BUILD_nnet
+function prebuild_awesomecnn() {
+	cd $BUILD_awesomecnn
 
 	# check marker in our source build
 	if [ -f .patched ]; then
@@ -18,21 +18,21 @@ function prebuild_nnet() {
 	fi
 
 	
-	try patch -p1 < $RECIPE_nnet/patches/nnet.patch
+	#try patch -p1 < $RECIPE_awesomecnn/patches/awesomecnn.patch
 	
 
 	# everything done, touch the marker !
 	touch .patched
 }
 
-function shouldbuild_nnet() {
-	if [ -d $BUILD_PATH/python-install/lib/python*/site-packages/nnet ]; then
+function shouldbuild_awesomecnn() {
+	if [ -d $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn ]; then
 		DO_BUILD=0
 	fi
 }
 
-function build_nnet() {
-	cd $BUILD_nnet
+function build_awesomecnn() {
+	cd $BUILD_awesomecnn
 
 	push_arm
 
@@ -43,32 +43,22 @@ function build_nnet() {
 	#export LDFLAGS="$LDFLAGS -L$LIBS_PATH -L$SRC_PATH/obj/local/$ARCH/ -lm -lz"
 	#export LDSHARED="$LIBLINK"
 	#try $HOSTPYTHON setup.py install -02
-	# develop 
-	# install -02
-	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
-
-	#export LDSHARED="$LIBLINK"
 
 	try find . -iname '*.pyx' -exec $CYTHON {} \;
 	try $HOSTPYTHON setup.py build_ext -v
 	try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
-	#export PYTHONPATH=$BUILD_hostpython/Lib/site-packages
 	try $HOSTPYTHON setup.py install -O2 --root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
 
-	#unset LDSHARED
-
-
-
-	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/nnet/docs
-	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/nnet/examples
-	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/nnet/tests
-	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/nnet/gp2x
+	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/docs
+	try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/examples
+	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/tests
+	#try rm -rf $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn/gp2x
 
 	unset LDSHARED
 	pop_arm
 }
 
-function postbuild_nnet() {
+function postbuild_awesomecnn() {
 	true
 }
