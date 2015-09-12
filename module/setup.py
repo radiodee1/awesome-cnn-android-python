@@ -2,7 +2,8 @@
 
 import os
 #import numpy as np
-from setuptools import setup #, find_packages
+#from setuptools import setup , find_packages
+from distutils.core import setup
 from Cython.Build import cythonize
 
 
@@ -18,7 +19,7 @@ setup(
     description = "Neural networks in NumPy/Cython",
     license = 'MIT',
     url = 'http://compute.dtu.dk/~abll',
-    packages = ['awesomecnn'],# find_packages(),
+    packages = ['awesomecnn', 'awesomecnn.convnet'],# find_packages(),
     install_requires = ['numpy', 'cython'], ## 'scipy'
     long_description = read('README.md'),
     classifiers = [
