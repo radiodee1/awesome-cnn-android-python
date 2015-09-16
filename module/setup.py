@@ -4,7 +4,7 @@ import os
 #import numpy as np
 #from setuptools import setup , find_packages
 from distutils.core import setup
-from Cython.Build import cythonize
+#from Cython.Build import cythonize
 
 
 def read(fname):
@@ -13,7 +13,7 @@ def read(fname):
 #print(find_packages())
 setup(
     name = 'awesomecnn',
-    version = '0.6',
+    version = '0.8',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
     description = "Neural networks in NumPy/Cython",
