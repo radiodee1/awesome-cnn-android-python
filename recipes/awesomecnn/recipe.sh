@@ -18,7 +18,7 @@ function prebuild_awesomecnn() {
 	fi
 
 	
-	#try patch -p1 < $RECIPE_awesomecnn/patches/awesomecnn.patch
+	try patch -p1 < $RECIPE_awesomecnn/patches/awesomecnn1.patch
 	
 
 	# everything done, touch the marker !
