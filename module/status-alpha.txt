@@ -16,3 +16,13 @@ start stamp -- 2015-09-06 17:15:52.748564
 1 of 1 batches (batch size=64), iter 1 with total of 1
 start stamp -- 2015-09-06 17:43:19.892515
 1 of 1 batches (batch size=64), iter 1 with total of 1
+[2015-09-17 14:53:24.289291]  start stamp -- 2015-09-17 14:53:24.289243
+[2015-09-17 14:53:24.482284]  1 of 2 batches (batch size=64), iter 1 with total of 1
+[2015-09-17 14:57:12.572841]  start stamp -- 2015-09-17 14:57:12.572780
+[2015-09-17 14:57:12.782821]  1 of 2 batches (batch size=64), iter 1 with total of 1
+[2015-09-17 14:57:13.095018]  2 of 2 batches (batch size=64), iter 1 with total of 1
+[2015-09-17 14:57:13.871189]  iter 1, loss 1.2946, train error 0.3600 - 150 imgs
+[2015-09-17 14:58:52.748837]  start stamp -- 2015-09-17 14:58:52.748778
+[2015-09-17 14:58:52.932572]  1 of 2 batches (batch size=64), iter 1 with total of 1
+[2015-09-17 15:20:22.680529]  start stamp -- 2015-09-17 15:20:22.680480
+[2015-09-17 15:20:22.863498]  1 of 1 batches (batch size=64), iter 1 with total of 1
