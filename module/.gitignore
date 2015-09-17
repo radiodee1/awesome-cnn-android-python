@@ -3,3 +3,6 @@ build/
 dist/
 nnet.egg-info/
 nnet/convnet/*.c
+*.c
+*.pyc
+
