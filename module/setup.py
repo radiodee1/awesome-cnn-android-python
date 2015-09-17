@@ -11,7 +11,7 @@ def read(fname):
 
 print(find_packages())
 setup(
-    name = 'nnet',
+    name = 'awesomecnn',
     version = '0.1',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',

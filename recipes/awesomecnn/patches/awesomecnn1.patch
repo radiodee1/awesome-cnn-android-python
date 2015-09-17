@@ -19,7 +19,7 @@
 -print(find_packages())
 +#print(find_packages())
  setup(
--    name = 'nnet',
+-    name = 'awesomecnn',
 -    version = '0.1',
 +    name = 'awesomecnn',
 +    version = '0.9',
