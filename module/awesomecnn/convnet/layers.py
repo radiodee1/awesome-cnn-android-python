@@ -2,9 +2,8 @@ import numpy as np
 
 from ..layers import Layer, ParamMixin
 
-
-#import pyximport; pyximport.install()
 try:
+    import pyximport; pyximport.install()
     from .convx import conv_bc01, bprop_conv_bc01
     from .poolx import pool_bc01, bprop_pool_bc01
     print("pyx files imported")
