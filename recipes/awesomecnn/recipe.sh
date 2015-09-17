@@ -46,7 +46,7 @@ function build_awesomecnn() {
 
 	try find . -iname '*.pyx' -exec $CYTHON {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
-	try find build/lib.* -name "*.o" -exec $STRIP {} \;
+	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
 	try $HOSTPYTHON setup.py install -O2 
 	#--root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
