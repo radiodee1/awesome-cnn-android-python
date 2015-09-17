@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.10
+VERSION_awesomecnn=0.11
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
 DEPS_awesomecnn=(python numpy kivy pil pyjnius)
@@ -44,9 +44,9 @@ function build_awesomecnn() {
 	#export LDSHARED="$LIBLINK"
 	#try $HOSTPYTHON setup.py install -02
 
-	#try find . -iname '*.pyx' -exec $CYTHON {} \;
+	try find . -iname '*.pyx' -exec $CYTHON {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
-	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
+	try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
 	try $HOSTPYTHON setup.py install -O2 
 	#--root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
