@@ -27,7 +27,7 @@ def conv_bc01( imgs, filters, convout):
     filters has shape (n_channels_in, n_channels_out, img_h, img_w)
     convout has shape (n_imgs, n_channels_out, img_h, img_w)
     """
-    #print "conv"
+    print "conv"
     
     imgs = ndarray(shape=imgs.shape , dtype=float, buffer=imgs)
     filters = ndarray(shape=filters.shape, dtype=float, buffer=filters)

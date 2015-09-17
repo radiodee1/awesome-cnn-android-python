@@ -27,7 +27,7 @@ def pool_bc01(imgs,
     switches has shape (n_imgs, n_channels, img_h//stride_y, img_w//stride_x, 2)
     """
     # TODO: mean pool
-    #print "pool"
+    print "pool"
 
     imgs = ndarray(shape=imgs.shape, dtype=float, buffer=imgs)
     poolout = ndarray(shape=poolout.shape, dtype=float, buffer=poolout)

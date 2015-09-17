@@ -24,6 +24,7 @@ def conv_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
     filters has shape (n_channels_in, n_channels_out, img_h, img_w)
     convout has shape (n_imgs, n_channels_out, img_h, img_w)
     """
+    print "convx"
     # TODO: support padding and striding  
     # TODO: experiment with border mode 'reflect'  
 

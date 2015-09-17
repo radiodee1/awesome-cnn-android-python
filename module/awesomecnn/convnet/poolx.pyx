@@ -25,6 +25,7 @@ def pool_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
     poolout has shape (n_imgs, n_channels, img_h//stride_y, img_w//stride_x)
     switches has shape (n_imgs, n_channels, img_h//stride_y, img_w//stride_x, 2)
     """
+    print "poolx"
     # TODO: mean pool
 
     cdef uint n_imgs = imgs.shape[0]
