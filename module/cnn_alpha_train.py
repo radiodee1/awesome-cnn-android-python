@@ -7,7 +7,7 @@ import numpy as np
 import awesomecnn.neuralnetwork as cnnet
 import awesomecnn.convnet.layers as conv
 import awesomecnn.layers as lnnet
-from nnet.helpers import one_hot
+from awesomecnn.helpers import one_hot
 import enum_local as LOAD
 import load_png_alpha as lp
 import datetime

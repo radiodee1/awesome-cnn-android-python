@@ -8,7 +8,7 @@ import awesomecnn.neuralnetwork as cnnet
 import awesomecnn.convnet.layers as conv
 import awesomecnn.layers as lnnet
 import math, sys
-from nnet.helpers import one_hot, unhot
+from awesomecnn.helpers import one_hot, unhot
 
 def run():
     
