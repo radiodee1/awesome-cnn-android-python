@@ -1,0 +1,17 @@
+diff -rupN originalmodule/awesomecnn/convnet/layers.py module/awesomecnn/convnet/layers.py
+--- originalmodule/awesomecnn/convnet/layers.py	2015-09-19 17:28:36.325271065 -0400
++++ module/awesomecnn/convnet/layers.py	2015-09-19 17:29:31.460901115 -0400
+@@ -2,11 +2,12 @@ import numpy as np
+ 
+ from ..layers import Layer, ParamMixin
+ 
++'''
+ try:
+     import pyximport; pyximport.install()
+ except:
+     pass
+-    
++'''    
+ try:
+     from .convx import conv_bc01, bprop_conv_bc01
+     from .poolx import pool_bc01, bprop_pool_bc01
