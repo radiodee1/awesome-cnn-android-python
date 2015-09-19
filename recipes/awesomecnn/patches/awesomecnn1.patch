@@ -20,9 +20,9 @@
 +#print(find_packages())
  setup(
 -    name = 'awesomecnn',
--    version = '0.12',
+-    version = '0.13',
 +    name = 'awesomecnn',
-+    version = '0.12',
++    version = '0.13',
      author = 'Anders Boesen Lindbo Larsen',
      author_email = 'abll@dtu.dk',
      description = "Neural networks in NumPy/Cython",

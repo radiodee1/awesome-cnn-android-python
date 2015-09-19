@@ -4,10 +4,13 @@ from ..layers import Layer, ParamMixin
 
 try:
     import pyximport; pyximport.install()
+except:
+    pass
+    
+try:
     from .convx import conv_bc01, bprop_conv_bc01
     from .poolx import pool_bc01, bprop_pool_bc01
     print("pyx files imported")
-
 except: 
     from .conv import conv_bc01, bprop_conv_bc01
     from .pool import pool_bc01, bprop_pool_bc01

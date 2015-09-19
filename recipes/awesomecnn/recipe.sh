@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.12
+VERSION_awesomecnn=0.13
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
 DEPS_awesomecnn=(python numpy kivy pil pyjnius)
