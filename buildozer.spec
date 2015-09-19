@@ -35,7 +35,7 @@ version = 1.0.0.20150906
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy,theano
-requirements = kivy==master,numpy,pyjnius,pil,awesomecnn
+requirements = kivy==master,numpy,pyjnius,awesomecnn,pil
 #,pil,sqlite3
 #,pil,libgpuarray
 
@@ -79,7 +79,7 @@ android.sdk = 21
 android.ndk = 10e
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
-android.private_storage = True
+android.private_storage = False
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
 android.ndk_path =~/bin/android-ndk-r10e/
@@ -132,7 +132,8 @@ android.p4a_dir =~/workspace/python-for-android/
 #android.wakelock = False
 
 # (list) Android application meta-data to set (key=value format)
-android.meta_data=surface.transparent=1,android.background_color=0
+android.meta_data=surface.transparent=1
+#android.background_color=0
 
 # (list) Android library project to add (will be added in the
 # project.properties automatically.)
