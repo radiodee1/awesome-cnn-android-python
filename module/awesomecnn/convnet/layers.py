@@ -2,6 +2,7 @@ import numpy as np
 
 from ..layers import Layer, ParamMixin
 
+'''
 try:
     import pyximport; pyximport.install()
 except:
@@ -15,9 +16,11 @@ except:
     from .conv import conv_bc01, bprop_conv_bc01
     from .pool import pool_bc01, bprop_pool_bc01
     print("skip pyx file import")
+'''
 
-
-
+from .conv import conv_bc01, bprop_conv_bc01
+from .pool import pool_bc01, bprop_pool_bc01
+print("skip pyx file import")
 
 class Conv(Layer, ParamMixin):
     def __init__(self, n_feats, filter_shape, strides, weight_scale,
