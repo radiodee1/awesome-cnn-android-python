@@ -1,6 +1,6 @@
 from __future__ import division
 import numpy as np
-import cython
+#import cython
 #from cython.parallel import parallel, prange, threadlocal
 cimport numpy as np
 
@@ -14,8 +14,8 @@ cdef inline int int_max(int a, int b) nogil: return a if a >= b else b
 cdef inline int int_min(int a, int b) nogil: return a if a <= b else b
 
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
+#@cython.boundscheck(False)
+#@cython.wraparound(False)
 def conv_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
               np.ndarray[DTYPE_t, ndim=4] filters,
               np.ndarray[DTYPE_t, ndim=4] convout):
@@ -80,8 +80,8 @@ def conv_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
 
 
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
+#@cython.boundscheck(False)
+#@cython.wraparound(False)
 def bprop_conv_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
                     np.ndarray[DTYPE_t, ndim=4] convout_grad,
                     np.ndarray[DTYPE_t, ndim=4] filters,

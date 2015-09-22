@@ -1,6 +1,6 @@
 from __future__ import division
 import numpy as np
-import cython
+#import cython
 cimport numpy as np
 
 
@@ -14,8 +14,8 @@ cdef inline int int_max(int a, int b): return a if a >= b else b
 cdef inline int int_min(int a, int b): return a if a <= b else b
 
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
+#@cython.boundscheck(False)
+#@cython.wraparound(False)
 def pool_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
               np.ndarray[DTYPE_t, ndim=4] poolout,
               np.ndarray[np.int_t, ndim=5] switches,
@@ -80,8 +80,8 @@ def pool_bc01(np.ndarray[DTYPE_t, ndim=4] imgs,
                     switches[i, c, y_out, x_out, 1] = img_x_max
 
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
+#@cython.boundscheck(False)
+#@cython.wraparound(False)
 def bprop_pool_bc01(np.ndarray[DTYPE_t, ndim=4] poolout_grad,
                     np.ndarray[np.int_t, ndim=5] switches,
                     np.ndarray[DTYPE_t, ndim=4] imgs_grad):
