@@ -36,7 +36,8 @@ function build_awesomecnn() {
 
 	push_arm
 
-	try find . -iname '*.pyx' -exec $CYTHON {} \;
+	#try find . -iname '*.pyx' -exec $CYTHON {} \;
+	
 	#try $HOSTPYTHON setup.py build_ext -v
 	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
