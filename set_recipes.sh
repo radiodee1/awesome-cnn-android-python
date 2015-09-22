@@ -15,7 +15,7 @@ PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
 
 FILENAME=org/renpy/android/GetText.java
 
-cd $JAVADIR
+#cd $JAVADIR
 #javac *.java
 cd $BUILDOZERDIR
 
