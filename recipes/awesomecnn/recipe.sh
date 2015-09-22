@@ -3,7 +3,7 @@
 VERSION_awesomecnn=0.19
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
-DEPS_awesomecnn=(python numpy )
+DEPS_awesomecnn=(python numpy)
 MD5_awesomecnn=
 BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
