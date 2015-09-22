@@ -215,8 +215,8 @@ class NeuralNetwork:
                         shapew1 = str(name+'_shape_w'+str(i+1))
                         textb1 = str(name+'_b'+str(i+1))
                         shapeb1 = str(name+'_shape_b'+str(i+1))
-                        activity = currentActivity
-                        #activity = PythonActivity.mActivity
+                        #activity = currentActivity
+                        activity = PythonActivity.mActivity
 
                         wshape = loader.getText(activity, shapew1)
                         wtext = loader.getText(activity, textw1)
