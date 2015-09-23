@@ -4,8 +4,12 @@ kivy.require('1.9.1') # replace with your current kivy version !
 
 import os, math
 
-#import cnn_both as nn
+'''
+import cnn_both as nn
+'''
 import enum_local as LOAD
+
+import awesomecnn.tester
 
 from kivy.app import App
 from kivy.uix.label import Label
