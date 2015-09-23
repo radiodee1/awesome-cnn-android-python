@@ -1,15 +1,15 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.20
+VERSION_awesomecnn=0.21
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
-DEPS_awesomecnn=(python numpy)
+DEPS_awesomecnn=(python numpy pyjnius)
 MD5_awesomecnn=
-BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)
+BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)/module
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
 
 function prebuild_awesomecnn() {
-	cd $BUILD_awesomecnn/module
+	cd $BUILD_awesomecnn
 
 	# check marker in our source build
 	if [ -f .patched ]; then
@@ -26,18 +26,19 @@ function prebuild_awesomecnn() {
 }
 
 function shouldbuild_awesomecnn() {
-	if [ -d $BUILD_PATH/python-install/lib/python*/site-packages/awesomecnn ]; then
+	if [ -d $SITEPACKAGES_PATH/awesomecnn ]; then
 		DO_BUILD=0
 	fi
 }
 
 function build_awesomecnn() {
-	cd $BUILD_awesomecnn/module
+	cd $BUILD_awesomecnn
 
 	push_arm
 
 	#try find . -iname '*.pyx' -exec $CYTHON {} \;
 	
+	#try find . -iname '*.pyx' -exec rm {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
 	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
 
