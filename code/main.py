@@ -4,7 +4,7 @@ kivy.require('1.9.1') # replace with your current kivy version !
 
 import os, math
 
-import cnn_both as nn
+#import cnn_both as nn
 import enum_local as LOAD
 
 from kivy.app import App
@@ -19,10 +19,6 @@ from kivy.clock import Clock
 from kivy.graphics import *
 from kivy.graphics.texture import Texture
 
-#try:
-#    import android
-#except:
-#    pass
 
 
 class IMEApp(App):
@@ -59,8 +55,10 @@ class IMEApp(App):
         self.pos = (0,0)
 
         self.process = False
+        '''
         self.cnn =  nn.DualCNN()
         self.cnn.load_file()
+        '''
         self.letter = ""
 
 
@@ -200,7 +198,7 @@ class IMEApp(App):
 
 
     def run_cnn(self):
-
+        '''
         if self.process == True and self.touched_screen == True:
             self.normalize()
             self.cnn.set_input_type(self.load_type)
@@ -215,6 +213,8 @@ class IMEApp(App):
             self.process = False
             self.update_texture()
             return
+        '''
+        pass
 
     def normalize(self):
         grid2 = [0 for j in range(28*28)]
@@ -295,6 +295,7 @@ class IMEApp(App):
         self.touched_screen = False
 
     def shift_load_type(self):
+        '''
         if self.load_type == LOAD.ALPHA:
             self.load_type = LOAD.NUMERIC
             self.load_letter = "#"
@@ -311,6 +312,8 @@ class IMEApp(App):
             self.load_letter = "A"
             self.cnn.set_input_type(self.load_type)
             return
+        '''
+        pass
 
 if __name__ == '__main__':
     IMEApp().run()
