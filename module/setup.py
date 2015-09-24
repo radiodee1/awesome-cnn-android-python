@@ -12,7 +12,7 @@ def read(fname):
 print(find_packages())
 setup(
     name = 'awesomecnn',
-    version = '0.21',
+    version = '0.22',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
     description = "Neural networks in NumPy/Cython",
