@@ -9,6 +9,14 @@ RESDIR=`pwd`/res
 
 PY4ADIR=~/workspace/python-for-android/
 
+if [ ! -d $PY4ADIR ]; then
+    cd ~/workspace/
+    git clone https://github.com/kivy/python-for-android.git
+    
+fi
+
+cd $BUILDOZERDIR
+
 cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
 
 PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
