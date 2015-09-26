@@ -13,8 +13,8 @@
 +#from Cython.Build import cythonize
  
  
- def read(fname):
-     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+- def read(fname):
+-     return open(os.path.join(os.path.dirname(__file__), fname)).read()
  
 -print(find_packages())
 +#print(find_packages())
