@@ -1,6 +1,6 @@
 import numpy as np
 import enum_local as LOAD
-import load_png_alpha as lp
+import helper_extra as lp
 
 def one_hot(labels , load_type ):#= LOAD.NUMERIC):
     #print load_type
