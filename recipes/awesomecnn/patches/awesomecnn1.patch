@@ -1,41 +1,41 @@
---- originalmodule/module/setup.py	2015-09-16 09:47:12.975557597 -0400
-+++ awesome-cnn/module/setup.py	2015-09-16 09:26:12.453049687 -0400
-@@ -1,25 +1,26 @@
+--- setup.py	2015-09-26 15:49:58.320334482 -0400
++++ setup-mod.py	2015-09-26 16:09:32.403489656 -0400
+@@ -1,25 +1,25 @@
  #!/usr/bin/env python
  
- import os
+-import os
 -import numpy as np
 -from setuptools import setup, find_packages
 -from Cython.Build import cythonize
++#import os
 +#import numpy as np
-+#from setuptools import setup , find_packages
 +from distutils.core import setup
 +#from Cython.Build import cythonize
  
  
 -def read(fname):
 -    return open(os.path.join(os.path.dirname(__file__), fname)).read()
++#def read(fname):
++#    return open(os.path.join(os.path.dirname(__file__), fname)).read()
  
 -print(find_packages())
 +#print(find_packages())
  setup(
--    name = 'awesomecnn',
--    version = '0.27',
-+    name = 'awesomecnn',
-+    version = '0.27',
+     name = 'awesomecnn',
+-    version = '0.28',
++    version = '0.28', ## 0.28
      author = 'Anders Boesen Lindbo Larsen',
      author_email = 'abll@dtu.dk',
      description = "Neural networks in NumPy/Cython",
      license = 'MIT',
      url = 'http://compute.dtu.dk/~abll',
--    packages = find_packages(),
+     packages = find_packages(),
 -    install_requires = ['numpy', 'scipy', 'cython'],
-+    packages = ['awesomecnn', 'awesomecnn.convnet'],# find_packages(),
-+    install_requires = ['numpy', 'cython'], ## 'scipy'
++    install_requires = ['numpy'], ##, 'scipy', 'cython'],
      long_description = read('README.md'),
      classifiers = [
          'Development Status :: 4 - Beta',
-@@ -29,10 +30,9 @@
+@@ -29,10 +29,10 @@
          'Operating System :: OS Independent',
          'Programming Language :: Python',
          'Topic :: Scientific/Engineering',
@@ -44,9 +44,9 @@
 -                             'awesomecnn/convnet/poolx.pyx']),
 -    include_dirs = [np.get_include()]
 +    ]#,
-+#    ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
-+#                             'awesomecnn/convnet/poolx.pyx'])#,
-+#    include_dirs = [np.get_include()]
++    #ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
++    #                         'awesomecnn/convnet/poolx.pyx']),
++    #include_dirs = [np.get_include()]
  )
  
--
+ 

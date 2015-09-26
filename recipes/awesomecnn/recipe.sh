@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION_awesomecnn=0.27
+VERSION_awesomecnn=0.28
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
 DEPS_awesomecnn=(python numpy)
@@ -18,7 +18,7 @@ function prebuild_awesomecnn() {
 	fi
 
 	
-	try patch -p2 < $RECIPE_awesomecnn/patches/awesomecnn1.patch
+	try patch -p0 < $RECIPE_awesomecnn/patches/awesomecnn1.patch
 	#try patch -p1 < $RECIPE_awesomecnn/patches/awesomecnn2.patch
 
 	# everything done, touch the marker !
