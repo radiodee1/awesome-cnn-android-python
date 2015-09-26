@@ -13,16 +13,16 @@
 +#from Cython.Build import cythonize
  
  
-- def read(fname):
--     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+-def read(fname):
+-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
  
 -print(find_packages())
 +#print(find_packages())
  setup(
 -    name = 'awesomecnn',
--    version = '0.26',
+-    version = '0.27',
 +    name = 'awesomecnn',
-+    version = '0.26',
++    version = '0.27',
      author = 'Anders Boesen Lindbo Larsen',
      author_email = 'abll@dtu.dk',
      description = "Neural networks in NumPy/Cython",
