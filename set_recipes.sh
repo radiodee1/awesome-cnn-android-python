@@ -1,5 +1,6 @@
 #!/bin/bash
 
+unset JAVA_TOOL_OPTIONS
 
 BUILDOZERDIR=`pwd`/
 CODEDIR=`pwd`/code/
