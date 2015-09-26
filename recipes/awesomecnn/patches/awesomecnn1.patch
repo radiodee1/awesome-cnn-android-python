@@ -20,9 +20,9 @@
 +#print(find_packages())
  setup(
 -    name = 'awesomecnn',
--    version = '0.23',
+-    version = '0.24',
 +    name = 'awesomecnn',
-+    version = '0.23',
++    version = '0.24',
      author = 'Anders Boesen Lindbo Larsen',
      author_email = 'abll@dtu.dk',
      description = "Neural networks in NumPy/Cython",
@@ -31,7 +31,7 @@
 -    packages = find_packages(),
 -    install_requires = ['numpy', 'scipy', 'cython'],
 +    packages = ['awesomecnn', 'awesomecnn.convnet'],# find_packages(),
-+    install_requires = ['numpy', 'cython', 'pyjnius'], ## 'scipy'
++    install_requires = ['numpy', 'cython'], ## 'scipy'
      long_description = read('README.md'),
      classifiers = [
          'Development Status :: 4 - Beta',
