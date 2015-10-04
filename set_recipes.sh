@@ -12,7 +12,8 @@ PY4ADIR=~/workspace/python-for-android/
 
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
-    git clone https://github.com/kivy/python-for-android.git
+    git clone -b old_toolchain https://github.com/kivy/python-for-android.git
+    ##git clone https://github.com/kivy/python-for-android.git
     
 fi
 

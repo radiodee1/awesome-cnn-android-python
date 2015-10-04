@@ -28,6 +28,7 @@ function prebuild_awesomecnn() {
 function shouldbuild_awesomecnn() {
 	if [ -d $SITEPACKAGES_PATH/awesomecnn ]; then
 		DO_BUILD=0
+		DO_BUILD=1
 	fi
 }
 
