@@ -18,7 +18,7 @@ function prebuild_awesomecnn() {
 	fi
 
 	
-	try patch -p0 < $RECIPE_awesomecnn/patches/awesomecnn1.patch
+	try cp -f $RECIPE_awesomecnn/patches/setup.py .
 	#try patch -p1 < $RECIPE_awesomecnn/patches/awesomecnn2.patch
 
 	# everything done, touch the marker !
@@ -41,7 +41,7 @@ function build_awesomecnn() {
 	#try find . -iname '*.pyx' -exec rm {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
 	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
-	echo awesomecnn
+	echo awesomecnn setup.py output
 	echo $HOSTPYTHON
 	
 
