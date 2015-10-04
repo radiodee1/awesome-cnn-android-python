@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import numpy as np
+#import numpy as np
 #from setuptools import setup, find_packages
 #from Cython.Build import cythonize
 from distutils.core import setup
@@ -11,8 +11,8 @@ from distutils.core import setup
 
 #print(find_packages())
 print("-----")
-print(np.get_include())
-print("-----")
+#print(np.get_include())
+
 
 setup(
     name = 'awesomecnn',
@@ -33,10 +33,10 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
-    ],
+    ]#,
     #ext_modules = cythonize(['awesomecnn/convnet/convx.pyx',
     #                         'awesomecnn/convnet/poolx.pyx']),
-    include_dirs = [np.get_include()]
+    #include_dirs = [np.get_include()]
 )
-
+print("-----")
 
