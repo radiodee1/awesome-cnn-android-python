@@ -23,8 +23,8 @@ setup(
     license = 'MIT',
     url = 'http://compute.dtu.dk/~abll',
     packages = ['awesomecnn', 'awesomecnn.convnet'], ## find_packages(),
-    install_requires = ['numpy'], ## 'scipy', 'cython'],
-    long_description = read('README.md'),
+    ## install_requires = ['numpy'], ## 'scipy', 'cython'],
+    long_description = '', # read('README.md'),
     classifiers = [
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
