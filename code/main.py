@@ -9,7 +9,7 @@ import cnn_both as nn
 '''
 import enum_local as LOAD
 
-#import awesomecnn.tester
+import awesomecnn.tester
 
 from kivy.app import App
 from kivy.uix.label import Label
