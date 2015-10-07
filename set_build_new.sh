@@ -2,6 +2,11 @@
 
 unset JAVA_TOOL_OPTIONS
 
+ANDROIDSDK=/home/dave/bin/Android/Sdk/
+ANDROIDNDK=/home/dave/bin/android-ndk-r10e/
+ANDROIDNDKVER=r10e
+ANDROIDAPI=14
+
 BUILDOZERDIR=`pwd`/
 CODEDIR=`pwd`/code/
 
@@ -15,11 +20,16 @@ if [ ! -d $PY4ADIR ]; then
     ## git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
     git clone https://github.com/kivy/python-for-android.git $PY4ADIR
     
+    cd $PY4ADIR
+    python setup.py install --user
+    
+    p4a create --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pil,numpy,pyjnius,awesomecnn,kivy==master
+    
 fi
 
 cd $BUILDOZERDIR
 
-cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
+cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
 
 PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
 
@@ -40,7 +50,7 @@ cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/src/src/$FILENAME
 
 cd $BUILDOZERDIR
 
-
+#p4a apk --private $BUILDOZERDIR/code/main.py --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
 
 
 
