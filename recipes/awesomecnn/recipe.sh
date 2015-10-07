@@ -42,6 +42,7 @@ function build_awesomecnn() {
 	#try find . -iname '*.pyx' -exec rm {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
 	#try find build/lib.* -name "*.o" -exec $STRIP {} \;
+	
 	echo awesomecnn setup.py output
 	echo $HOSTPYTHON
 	

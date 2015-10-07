@@ -8,12 +8,12 @@ CODEDIR=`pwd`/code/
 JAVADIR=`pwd`/java/
 RESDIR=`pwd`/res
 
-PY4ADIR=~/workspace/python-for-android-old/
+PY4ADIR=~/workspace/python-for-android/
 
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
-    git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
-    ##git clone https://github.com/kivy/python-for-android.git $PY4ADIR
+    ## git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
+    git clone https://github.com/kivy/python-for-android.git $PY4ADIR
     
 fi
 
@@ -41,8 +41,6 @@ cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/src/src/$FILENAME
 cd $BUILDOZERDIR
 
 
-
-buildozer -v android debug
 
 
 

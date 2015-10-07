@@ -88,7 +88,7 @@ android.ndk_path =~/bin/android-ndk-r10e/
 android.sdk_path =~/bin/Android/Sdk/
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
-android.p4a_dir =~/workspace/python-for-android/
+android.p4a_dir =~/workspace/python-for-android-old/
 
 # (list) python-for-android whitelist
 #android.p4a_whitelist = theano
