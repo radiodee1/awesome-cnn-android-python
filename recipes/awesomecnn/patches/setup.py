@@ -2,9 +2,12 @@
 
 import os
 #import numpy as np
-#from setuptools import setup, find_packages
+#from setuptools import setup #, find_packages
 #from Cython.Build import cythonize
 from distutils.core import setup
+
+#from py4a import patch_distutils
+#patch_distutils()
 
 #def read(fname):
 #    return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -23,7 +26,7 @@ setup(
     license = 'MIT',
     url = 'http://compute.dtu.dk/~abll',
     packages = ['awesomecnn', 'awesomecnn.convnet'], ## find_packages(),
-    ## install_requires = ['numpy'], ## 'scipy', 'cython'],
+    #install_requires = ['numpy'], ## 'scipy', 'cython'],
     long_description = '', # read('README.md'),
     classifiers = [
         'Development Status :: 4 - Beta',

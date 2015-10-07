@@ -1,5 +1,5 @@
 import kivy
-kivy.require('1.9.1') # replace with your current kivy version !
+#kivy.require('1.9.1') # replace with your current kivy version !
 
 
 import os, math

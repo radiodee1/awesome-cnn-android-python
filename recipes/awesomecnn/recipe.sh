@@ -3,7 +3,7 @@
 VERSION_awesomecnn=0.28
 URL_awesomecnn=https://github.com/radiodee1/awesome-cnn/archive/v$VERSION_awesomecnn.zip
 
-DEPS_awesomecnn=(python numpy)
+DEPS_awesomecnn=(python numpy pyjnius)
 MD5_awesomecnn=
 BUILD_awesomecnn=$BUILD_PATH/awesomecnn/$(get_directory $URL_awesomecnn)/module
 RECIPE_awesomecnn=$RECIPES_PATH/awesomecnn
@@ -37,7 +37,7 @@ function build_awesomecnn() {
 
 	push_arm
 
-	#try find . -iname '*.pyx' -exec $CYTHON {} \;
+	try find . -iname '*.pyx' -exec $CYTHON {} \;
 	
 	#try find . -iname '*.pyx' -exec rm {} \;
 	#try $HOSTPYTHON setup.py build_ext -v
@@ -47,7 +47,7 @@ function build_awesomecnn() {
 	
 
 	$HOSTPYTHON setup.py install -O2 
-	#--root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
+	## --root=$BUILD_PATH/python-install --install-lib=lib/python2.7/site-packages
 
 	pop_arm
 }
