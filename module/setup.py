@@ -16,7 +16,7 @@ print("-----")
 
 setup(
     name = 'awesomecnn',
-    version = '0.28',
+    version = '0.29',
     author = 'Anders Boesen Lindbo Larsen',
     author_email = 'abll@dtu.dk',
     description = "Neural networks in NumPy/Cython",
