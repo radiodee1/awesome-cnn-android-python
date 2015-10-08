@@ -35,7 +35,7 @@ version = 1.0.0.20150906
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy,theano
-requirements = pil,numpy,pyjnius,awesomecnn,kivy==master
+requirements = kivy==master,pil,numpy==1.9.2,pyjnius,awesomecnn
 #,pil,sqlite3
 #,pil,libgpuarray
 

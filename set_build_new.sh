@@ -23,7 +23,7 @@ if [ ! -d $PY4ADIR ]; then
     cd $PY4ADIR
     python setup.py install --user
     
-    python-for-android create --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pil,numpy,pyjnius,awesomecnn,kivy==master
+    ~/.local/bin/python-for-android create --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pil,numpy,pyjnius,awesomecnn,kivy==master
     
 fi
 
