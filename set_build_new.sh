@@ -21,19 +21,18 @@ PY4ADIST=~/.local/share/python-for-android/
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
     ## git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
-    git clone -b revamp https://github.com/kivy/python-for-android.git $PY4ADIR
+    git clone  https://github.com/kivy/python-for-android.git 
+    
+    cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
     
     cd $PY4ADIR
-    python setup.py install --user
-    
-
-    cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
+    sudo -E python setup.py install 
     
 fi
 
-# ~/.local/bin/p4a clean_builds
+# p4a clean_builds
 
-~/.local/bin/python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pyjnius,kivy
+python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=pyjnius,kivy
 
 
 #awesomecnn,numpy

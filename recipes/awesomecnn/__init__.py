@@ -12,22 +12,22 @@ class AwesomecnnRecipe(Recipe):
     conflicts = []
 
     def get_recipe_env(self, arch):
-        env = super(PygameRecipe, self).get_recipe_env(arch)
-        env['LDFLAGS'] = env['LDFLAGS'] + ' -L{}'.format(
-            self.ctx.get_libs_dir(arch.arch))
-        env['LDSHARED'] = join(self.ctx.root_dir, 'tools', 'liblink')
-        env['LIBLINK'] = 'NOTNONE'
-        env['NDKPLATFORM'] = self.ctx.ndk_platform
+        #env = super(PygameRecipe, self).get_recipe_env(arch)
+        #env['LDFLAGS'] = env['LDFLAGS'] + ' -L{}'.format(
+        #    self.ctx.get_libs_dir(arch.arch))
+        #env['LDSHARED'] = join(self.ctx.root_dir, 'tools', 'liblink')
+        #env['LIBLINK'] = 'NOTNONE'
+        #env['NDKPLATFORM'] = self.ctx.ndk_platform
 
         # Every recipe uses its own liblink path, object files are collected and biglinked later
-        liblink_path = join(self.get_build_container_dir(arch.arch), 'objects_{}'.format(self.name))
-        env['LIBLINK_PATH'] = liblink_path
-        ensure_dir(liblink_path)
+        #liblink_path = join(self.get_build_container_dir(arch.arch), 'objects_{}'.format(self.name))
+        #env['LIBLINK_PATH'] = liblink_path
+        #ensure_dir(liblink_path)
         return env
 
     def prebuild_armeabi(self):
         if exists(join(self.get_build_container_dir('armeabi'), '.patched')):
-            info('Pygame already patched, skipping.')
+            info('Awesomecnn already patched, skipping.')
             return
         shprint(sh.cp, join(self.get_recipe_dir(), 'Setup'),
                 join(self.get_build_dir('armeabi'), 'Setup'))
