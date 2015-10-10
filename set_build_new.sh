@@ -15,6 +15,9 @@ RESDIR=`pwd`/res
 
 PY4ADIR=~/workspace/python-for-android/
 
+PY4ADIST=~/.local/share/python-for-android/
+
+
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
     ## git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
@@ -23,30 +26,38 @@ if [ ! -d $PY4ADIR ]; then
     cd $PY4ADIR
     python setup.py install --user
     
-    ~/.local/bin/python-for-android create --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pil,numpy,pyjnius,awesomecnn,kivy==master
+
+    cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
     
 fi
 
+# ~/.local/bin/p4a clean_builds
+
+~/.local/bin/python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=pygame --requirements=pyjnius,kivy
+
+
+#awesomecnn,numpy
+
 cd $BUILDOZERDIR
 
-cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
+
 
 PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
 
 FILENAME=org/renpy/android/GetText.java
 
-#cd $JAVADIR
-#javac *.java
+
+
 cd $BUILDOZERDIR
 
 mkdir -p $RESDIR 
 #mkdir -p $PY4ADIR/src/res/raw/
 
-cd $PY4ADIR/src/res/
-mkdir -p raw
-cp -pR $RESDIR/* $PY4ADIR/src/res/raw/.
+#cd $PY4ADIR/src/res/
+#mkdir -p raw
+#cp -pR $RESDIR/* $PY4ADIR/src/res/raw/.
 
-cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/src/src/$FILENAME
+#cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/src/src/$FILENAME
 
 cd $BUILDOZERDIR
 
