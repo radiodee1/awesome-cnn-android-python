@@ -20,19 +20,19 @@ PY4ADIST=~/.local/share/python-for-android/
 
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
-    ## git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
-    git clone  https://github.com/kivy/python-for-android.git 
+
+    git clone -b master https://github.com/kivy/python-for-android.git 
     
     cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
     
     cd $PY4ADIR
-    sudo -E python setup.py install 
+    sudo -E python setup.py install --user
     
 fi
 
 # p4a clean_builds
 
-python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=pyjnius,kivy
+~/.local/bin/python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=pyjnius,kivy
 
 
 #awesomecnn,numpy
@@ -60,7 +60,7 @@ mkdir -p $RESDIR
 
 cd $BUILDOZERDIR
 
-#python-for-android apk --private $BUILDOZERDIR/code/main.py --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
+#~/.local/bin/python-for-android apk --private $BUILDOZERDIR/code/main.py --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
 
 
 
