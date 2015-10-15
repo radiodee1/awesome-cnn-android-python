@@ -29,7 +29,7 @@ class AwesomecnnRecipe(Recipe):
         if exists(join(self.get_build_container_dir('armeabi'), '.patched')):
             info('awesomecnn already patched, skipping.')
             return
-        shprint(sh.cp, join(self.get_recipe_dir(), 'setup.py'),
+        shprint(sh.cp, join(self.get_recipe_dir(),'patches', 'setup.py'),
                 join(self.get_build_dir('armeabi'), 'setup.py'))
         #self.apply_patch(join('patches', 'fix-surface-access.patch'))
         #self.apply_patch(join('patches', 'fix-array-surface.patch'))

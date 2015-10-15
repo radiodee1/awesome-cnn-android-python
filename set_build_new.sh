@@ -13,8 +13,8 @@ CODEDIR=`pwd`/code/
 JAVADIR=`pwd`/java/
 RESDIR=`pwd`/res
 
-BACKEND_PYGAME=/pythonforandroid/pygame/bootstraps/build/
-BACKEND_SDL2=/pythonforandroid/sdl2/bootstraps/build/
+BACKEND_PYGAME=/pythonforandroid/bootstraps/pygame/build/
+BACKEND_SDL2=/pythonforandroid/bootstraps/sdl2/build/
 BACKEND_DIR=$BACKEND_PYGAME
 
 PROJECTDIR=$BUILDOZERDIR/GetText/GetText/src/main/java/
