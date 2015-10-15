@@ -13,18 +13,38 @@ CODEDIR=`pwd`/code/
 JAVADIR=`pwd`/java/
 RESDIR=`pwd`/res
 
+BACKEND_PYGAME=/pythonforandroid/pygame/bootstraps/build/
+BACKEND_SDL2=/pythonforandroid/sdl2/bootstraps/build/
+BACKEND_DIR=$BACKEND_PYGAME
+
+PROJECTDIR=$BUILDOZERDIR/GetText/GetText/src/main/java/
+
+FILENAME=org/renpy/android/GetText.java
+
 PY4ADIR=~/workspace/python-for-android/
 
 PY4ADIST=~/.local/share/python-for-android/
 
 
 if [ ! -d $PY4ADIR ]; then
-    cd ~/workspace/
 
+    ## download master ##
+    cd ~/workspace/
     git clone -b master https://github.com/kivy/python-for-android.git 
+    cd $BUILDOZERDIR
     
+    ## home made recipes ##
     cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
     
+    ## home made java parts ##
+    cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_DIR/src/$FILENAME
+    
+    ## weights and biases ##
+    mkdir -p $RESDIR 
+    mkdir -p $PY4ADIR/$BACKEND_DIR/res/raw
+    cp -pR $RESDIR/* $PY4ADIR/$BACKEND_DIR/res/raw/.
+    
+    ## build master ##
     cd $PY4ADIR
     sudo -E python setup.py install --user
     
@@ -32,31 +52,12 @@ fi
 
 # p4a clean_builds
 
-~/.local/bin/python-for-android create --debug --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=pyjnius,kivy
-
-
-#awesomecnn,numpy
-
 cd $BUILDOZERDIR
 
+## build distribution ##
+#~/.local/bin/python-for-android create --debug --force_build True --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=python2
 
-
-PROJECTDIR=`pwd`/GetText/GetText/src/main/java/
-
-FILENAME=org/renpy/android/GetText.java
-
-
-
-cd $BUILDOZERDIR
-
-mkdir -p $RESDIR 
-#mkdir -p $PY4ADIR/src/res/raw/
-
-#cd $PY4ADIR/src/res/
-#mkdir -p raw
-#cp -pR $RESDIR/* $PY4ADIR/src/res/raw/.
-
-#cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/src/src/$FILENAME
+#awesomecnn,numpy,pyjnius,kivy
 
 cd $BUILDOZERDIR
 
