@@ -2,10 +2,10 @@
 
 unset JAVA_TOOL_OPTIONS
 
-ANDROIDSDK=~/bin/Android/Sdk/
-ANDROIDNDK=~/bin/android-ndk-r10e/
-ANDROIDNDKVER=r10e
-ANDROIDAPI=14
+export ANDROIDSDK=~/bin/Android/Sdk/
+export ANDROIDNDK=~/bin/android-ndk-r10e/
+export ANDROIDNDKVER=r10e
+export ANDROIDAPI=14
 
 BUILDOZERDIR=`pwd`/
 CODEDIR=`pwd`/code/
@@ -46,7 +46,8 @@ if [ ! -d $PY4ADIR ]; then
     
     ## build master ##
     cd $PY4ADIR
-    sudo python setup.py install --user
+    ## python setup.py install --user
+    sudo -E python setup.py install 
     
 fi
 
