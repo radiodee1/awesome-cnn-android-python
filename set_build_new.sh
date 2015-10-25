@@ -5,13 +5,16 @@ unset JAVA_TOOL_OPTIONS
 export ANDROIDSDK=~/bin/Android/Sdk/
 export ANDROIDNDK=~/bin/android-ndk-r10e/
 export ANDROIDNDKVER=r10e
-export ANDROIDAPI=14
+export ANDROIDAPI=15
 
 BUILDOZERDIR=`pwd`/
 CODEDIR=`pwd`/code/
 
 JAVADIR=`pwd`/java/
 RESDIR=`pwd`/res
+
+REMOVE_FOLDER1=pythonforandroid/recipes/kivysdl2python3
+REMOVE_FOLDER2=pythonforandroid/recipes/sdl2python3
 
 BACKEND_PYGAME=/pythonforandroid/bootstraps/pygame/build/
 BACKEND_SDL2=/pythonforandroid/bootstraps/sdl2/build/
@@ -39,6 +42,12 @@ if [ ! -d $PY4ADIR ]; then
     ## home made java parts ##
     cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_DIR/src/$FILENAME
     
+    ## remove folder from recipes
+    rm -fr $PY4ADIR/$REMOVE_FOLDER1
+    rm -fr $PY4ADIR/$REMOVE_FOLDER2
+    echo $PY4ADIR/$REMOVE_FOLDER1
+    echo $PY4ADIR/$REMOVE_FOLDER2
+    
     ## weights and biases ##
     mkdir -p $RESDIR 
     mkdir -p $PY4ADIR/$BACKEND_DIR/res/raw
@@ -57,7 +66,9 @@ cd $BUILDOZERDIR
 
 ## build distribution ##
 ~/.local/bin/python-for-android create --debug --force_build True \
-    --dist_name=AwesomeCNN --bootstrap=sdl2 --requirements=python3,kivy
+    --dist_name=AwesomeCNN --bootstrap=pygame 
+    
+##    --requirements=numpy
 
 #awesomecnn,numpy,pyjnius,kivy
 
