@@ -28,12 +28,16 @@ PY4ADIR=~/workspace/python-for-android/
 
 PY4ADIST=~/.local/share/python-for-android/
 
+GIT_URL_KIVY=https://github.com/kivy/python-for-android.git
+GIT_URL_HOME=https://github.com/radiodee1/python-for-android.git
+
+GIT_CLONE=$GIT_URL_HOME
 
 if [ ! -d $PY4ADIR ]; then
 
     ## download master ##
     cd ~/workspace/
-    git clone -b master https://github.com/kivy/python-for-android.git 
+    git clone -b master $GIT_CLONE
     cd $BUILDOZERDIR
     
     ## home made recipes ##
