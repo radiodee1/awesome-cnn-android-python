@@ -19,6 +19,9 @@ fi
 
 cd $BUILDOZERDIR
 
+cp -R $BUILDOZERDIR/module/awesomecnn $BUILDOZERDIR/code/.
+echo "copy awesomecnn here"
+
 cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
 
 PROJECTDIR=`pwd`/GetText/GetText/src/main/java/

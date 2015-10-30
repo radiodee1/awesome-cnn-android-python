@@ -16,7 +16,7 @@ module/data/mldata/
 
 code/<prop*/
 code/data/mldata/
-
+code/awesomecnn
 
 *.pyc
 module/examples/data/mldata/
