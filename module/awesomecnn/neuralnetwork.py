@@ -1,7 +1,7 @@
 import numpy as np
 #import scipy as sp
 import os
-#import jnius
+import jnius
 from layers import ParamMixin
 from helpers import one_hot, unhot
 import enum_local as LOAD

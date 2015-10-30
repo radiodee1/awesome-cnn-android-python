@@ -68,7 +68,7 @@ fullscreen = 0
 #android.permissions = WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
 
 # (int) Android API to use
-android.api = 14
+android.api = 15
 
 # (int) Minimum API required (8 = Android 2.2 devices)
 android.minapi = 8
