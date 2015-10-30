@@ -49,8 +49,8 @@ if [ ! -d $PY4ADIR ]; then
     ## remove folder from recipes
     rm -fr $PY4ADIR/$REMOVE_FOLDER1
     rm -fr $PY4ADIR/$REMOVE_FOLDER2
-    echo $PY4ADIR/$REMOVE_FOLDER1
-    echo $PY4ADIR/$REMOVE_FOLDER2
+    #echo $PY4ADIR/$REMOVE_FOLDER1
+    #echo $PY4ADIR/$REMOVE_FOLDER2
     
     ## weights and biases ##
     mkdir -p $RESDIR 
