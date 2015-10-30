@@ -1,12 +1,17 @@
 import numpy as np
-#import scipy as sp
-import os
 import jnius
 from layers import ParamMixin
 from helpers import one_hot, unhot
 import enum_local as LOAD
-import datetime
 import store
+'''
+try:
+    import datetime
+    import os
+except:
+    pass
+'''
+
 
 class NeuralNetwork:
     def __init__(self, layers, rng=None):
@@ -33,10 +38,13 @@ class NeuralNetwork:
     def fit(self, X, Y, learning_rate=0.1, max_iter=10, batch_size=64, name="mnist", load_type = LOAD.NUMERIC):
         """ Train network on the given data. """
         self.name = name
-        
-        stamp = str("start stamp -- "+str(datetime.datetime.now()))
-        self.append_status(name=name, message=stamp)
-        
+        '''
+        try:
+            stamp = str("start stamp -- "+str(datetime.datetime.now()))
+            self.append_status(name=name, message=stamp)
+        except:
+            print("no datetime")
+        '''
         n_samples = Y.shape[0]
         n_batches = n_samples // batch_size
         Y_one_hot = one_hot(Y , load_type=load_type)
@@ -139,37 +147,22 @@ class NeuralNetwork:
             level += 1
             if isinstance(layer, ParamMixin):
                 W, b = layer.params()
-                
-                if not self.android_load :
-                    shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
-                    np.savetxt(shapew1, W.shape)
-                    shapeb1 = str(self.nn_dir+name+'_shape_b'+str(level)+'.txt')
-                    np.savetxt(shapeb1, b.shape)
-                    textw1 = str(self.nn_dir+name+'_w'+str(level)+'.txt')
-                    Wout, xshape = store.store_w(W)
-                    np.savetxt(textw1, Wout)
-                    textb1 = str(self.nn_dir+name+'_b'+str(level)+'.txt')
-                    bout , xshape = store.store_b(b)
-                    np.savetxt(textb1, bout)
-                    print (str (level) + " save.")
-            
                 '''
-                W, b = layer.params()
-
-                
-                if not self.android_load :
-                    
-                    shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
-                    np.savetxt(shapew1, W.shape)
-                    shapeb1 = str(self.nn_dir+name+'_shape_b'+str(level)+'.txt')
-                    np.savetxt(shapeb1, b.shape)
-                    textw1 = str(self.nn_dir+name+'_w'+str(level)+'.txt')
-                    Wout, xshape = store.store_w(W)
-                    np.savetxt(textw1, Wout)
-                    textb1 = str(self.nn_dir+name+'_b'+str(level)+'.txt')
-                    bout , xshape = store.store_b(b)
-                    np.savetxt(textb1, bout)
-                    print (str (level) + " save.")
+                try:
+                    if not self.android_load :
+                        shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
+                        np.savetxt(shapew1, W.shape)
+                        shapeb1 = str(self.nn_dir+name+'_shape_b'+str(level)+'.txt')
+                        np.savetxt(shapeb1, b.shape)
+                        textw1 = str(self.nn_dir+name+'_w'+str(level)+'.txt')
+                        Wout, xshape = store.store_w(W)
+                        np.savetxt(textw1, Wout)
+                        textb1 = str(self.nn_dir+name+'_b'+str(level)+'.txt')
+                        bout , xshape = store.store_b(b)
+                        np.savetxt(textb1, bout)
+                        print (str (level) + " save.")
+                except:
+                    pass
                 '''
                 
                 
@@ -184,31 +177,34 @@ class NeuralNetwork:
                 if not self.android_load :
                     ## load text files...
                     print( i + 1)
-
-                    textw1 = str(self.nn_dir+name+'_w'+str(i+1)+'.txt')
-                    shapew1 = str(self.nn_dir+name+'_shape_w'+str(i+1)+'.txt')
-                    if os.path.exists(textw1) and os.path.exists(shapew1):
-                        wshape = np.loadtxt(shapew1)
-                        wtext = np.loadtxt(textw1)
-                        self.layers[i].W = store.unstore_w(wtext, wshape)
-                        print 'w' + str(i+1)
-                    textb1 = str(self.nn_dir+name+'_b'+str(i+1)+'.txt')
-                    shapeb1 = str(self.nn_dir+name+'_shape_b'+str(i+1)+'.txt')
-                    if os.path.exists(textb1) and os.path.exists(shapeb1) :
-                        bshape = np.loadtxt(shapeb1)
-                        btext = np.loadtxt(textb1)
-                        self.layers[i].b = store.unstore_b(btext, bshape)
-                        print 'b' + str(i+1)
-                    pass
+                    '''
+                    try: 
+                        textw1 = str(self.nn_dir+name+'_w'+str(i+1)+'.txt')
+                        shapew1 = str(self.nn_dir+name+'_shape_w'+str(i+1)+'.txt')
+                        if os.path.exists(textw1) and os.path.exists(shapew1):
+                            wshape = np.loadtxt(shapew1)
+                            wtext = np.loadtxt(textw1)
+                            self.layers[i].W = store.unstore_w(wtext, wshape)
+                            print 'w' + str(i+1)
+                        textb1 = str(self.nn_dir+name+'_b'+str(i+1)+'.txt')
+                        shapeb1 = str(self.nn_dir+name+'_shape_b'+str(i+1)+'.txt')
+                        if os.path.exists(textb1) and os.path.exists(shapeb1) :
+                            bshape = np.loadtxt(shapeb1)
+                            btext = np.loadtxt(textb1)
+                            self.layers[i].b = store.unstore_b(btext, bshape)
+                            print 'b' + str(i+1)
+                    except:
+                        pass
+                    '''
 
                 elif self.android_load :
-
+                    '''
                     try:
                         
                         GetText = jnius.autoclass("org.renpy.android.GetText")
                         PythonActivity = jnius.autoclass('org.renpy.android.PythonActivity')
 
-                        currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
+                        #currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
                         
                         
                         loader = GetText()
@@ -238,14 +234,20 @@ class NeuralNetwork:
                     except:
                         #exit()
                         print("not loading android weights")
+                    '''
+                    pass
             
     def append_status(self, name, message):
         if not self.android_load :
             print (message)
-            time = "[" + str(datetime.datetime.now()) + "]"
-            message = time + "  " + message + "\n"
-            filename = "status-" + name.strip() +".txt"
-            f = open(filename, 'a')
-            f.write(message)
-            f.close()
-
+            '''
+            try:
+                time = "[" + str(datetime.datetime.now()) + "]"
+                message = time + "  " + message + "\n"
+                filename = "status-" + name.strip() +".txt"
+                f = open(filename, 'a')
+                f.write(message)
+                f.close()
+            except:
+                print("no datetime")
+            '''

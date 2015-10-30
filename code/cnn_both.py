@@ -7,7 +7,7 @@ import numpy as np
 import awesomecnn.neuralnetwork as cnnet
 import awesomecnn.convnet.layers as conv
 import awesomecnn.layers as lnnet
-import math, sys
+#import math, sys
 #from nnet.helpers import one_hot, unhot
 import enum_local as LOAD
 #import load_png_alpha as lp
@@ -197,20 +197,21 @@ def shape_x(x):
 
 def show_xvalues(xarray = [[]], index = 0):
     print ("show x values " + str(index))
+    '''
     xx = xarray[index]
     ln = int(math.floor(math.sqrt(len(xx)))) 
     print (ln)
     for x in range(1,ln):
         for y in range(1, ln):
             zzz = '#'
-            #zzz =int( xx[x* ln + y])
+
             if int(xx[ x* ln + y]) == int( 0) : 
                 zzz = '.'
-            #print(zzz) 
-            sys.stdout.write(zzz)
+
+            #sys.stdout.write(zzz)
         print("");
     print ("\n===========================\n")
-
+    '''
 
 def ascii_ymatrix(alphabet_set=LOAD.ALPHANUMERIC ) :
     mat = []

@@ -20,6 +20,7 @@ fi
 cd $BUILDOZERDIR
 
 cp -R $BUILDOZERDIR/module/awesomecnn $BUILDOZERDIR/code/.
+rm -f $BUILDOZERDIR/code/awesomecnn/convnet/*x.pyx
 echo "copy awesomecnn here"
 
 cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/recipes/.
