@@ -1,9 +1,13 @@
+
+
 import numpy as np
 import jnius
 from layers import ParamMixin
 from helpers import one_hot, unhot
 import enum_local as LOAD
+
 import store
+
 '''
 try:
     import datetime
@@ -198,13 +202,15 @@ class NeuralNetwork:
                     '''
 
                 elif self.android_load :
-                    '''
-                    try:
+                    
+                    
+                    if True:
+                    #try:
                         
                         GetText = jnius.autoclass("org.renpy.android.GetText")
                         PythonActivity = jnius.autoclass('org.renpy.android.PythonActivity')
 
-                        #currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
+                        currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
                         
                         
                         loader = GetText()
@@ -212,8 +218,8 @@ class NeuralNetwork:
                         shapew1 = str(name+'_shape_w'+str(i+1))
                         textb1 = str(name+'_b'+str(i+1))
                         shapeb1 = str(name+'_shape_b'+str(i+1))
-                        #activity = currentActivity
-                        activity = PythonActivity.mActivity
+                        activity = currentActivity
+                        #activity = PythonActivity.mActivity
 
                         wshape = loader.getText(activity, shapew1)
                         wtext = loader.getText(activity, textw1)
@@ -231,10 +237,10 @@ class NeuralNetwork:
                         self.layers[i].b = store.unstore_b(bin,bshapein)
                         
                         
-                    except:
+                    #except:
                         #exit()
-                        print("not loading android weights")
-                    '''
+                        #print("not loading android weights")
+                    
                     pass
             
     def append_status(self, name, message):

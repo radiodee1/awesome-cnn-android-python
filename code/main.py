@@ -7,10 +7,10 @@ import math
 
 
 #import cnn_both as nn
+import awesomecnn.tester
+import awesomecnn.neuralnetwork as nnnn
 
 import enum_local as LOAD
-
-import awesomecnn
 
 from kivy.app import App
 from kivy.uix.label import Label

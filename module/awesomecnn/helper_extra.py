@@ -1,20 +1,6 @@
-import numpy
-#import pylab
-#from PIL import Image
-#import cPickle
-#import gzip
-#import os
-#import sys
-#import time
-#import random
+#import numpy
 
-#import math
-#from glob    import glob
-#from os.path import join
-#from os.path import expanduser
-#import getpass
-#import pickle_local as plocal
-#import mnist_loader as mnistl
+
 import enum_local as LOAD
 
 
