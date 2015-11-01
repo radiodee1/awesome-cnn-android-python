@@ -151,7 +151,7 @@ class NeuralNetwork:
             level += 1
             if isinstance(layer, ParamMixin):
                 W, b = layer.params()
-                '''
+                
                 try:
                     if not self.android_load :
                         shapew1 = str(self.nn_dir+name+'_shape_w'+str(level)+'.txt')
@@ -167,7 +167,7 @@ class NeuralNetwork:
                         print (str (level) + " save.")
                 except:
                     pass
-                '''
+                
                 
                 
         
