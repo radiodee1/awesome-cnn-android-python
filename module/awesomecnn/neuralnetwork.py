@@ -181,7 +181,7 @@ class NeuralNetwork:
                 if not self.android_load :
                     ## load text files...
                     print( i + 1)
-                    '''
+                    
                     try: 
                         textw1 = str(self.nn_dir+name+'_w'+str(i+1)+'.txt')
                         shapew1 = str(self.nn_dir+name+'_shape_w'+str(i+1)+'.txt')
@@ -199,7 +199,7 @@ class NeuralNetwork:
                             print 'b' + str(i+1)
                     except:
                         pass
-                    '''
+                    
 
                 elif self.android_load :
                     
@@ -247,7 +247,7 @@ class NeuralNetwork:
     def append_status(self, name, message):
         if not self.android_load :
             print (message)
-            '''
+            
             try:
                 time = "[" + str(datetime.datetime.now()) + "]"
                 message = time + "  " + message + "\n"
@@ -257,4 +257,4 @@ class NeuralNetwork:
                 f.close()
             except:
                 print("no datetime")
-            '''
+            
