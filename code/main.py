@@ -9,7 +9,7 @@ import math
 #import cnn_both as nn
 import awesomecnn.tester
 #import awesomecnn.neuralnetwork as nnnn
-#import numpy as nnnn
+import numpy as nnnn
 
 import enum_local as LOAD
 
