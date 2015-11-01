@@ -8,13 +8,13 @@ import enum_local as LOAD
 
 import store
 
-'''
+
 try:
     import datetime
     import os
 except:
     pass
-'''
+
 
 
 class NeuralNetwork:
@@ -42,13 +42,13 @@ class NeuralNetwork:
     def fit(self, X, Y, learning_rate=0.1, max_iter=10, batch_size=64, name="mnist", load_type = LOAD.NUMERIC):
         """ Train network on the given data. """
         self.name = name
-        '''
+        
         try:
             stamp = str("start stamp -- "+str(datetime.datetime.now()))
             self.append_status(name=name, message=stamp)
         except:
             print("no datetime")
-        '''
+        
         n_samples = Y.shape[0]
         n_batches = n_samples // batch_size
         Y_one_hot = one_hot(Y , load_type=load_type)
