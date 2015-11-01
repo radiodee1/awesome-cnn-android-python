@@ -6,10 +6,10 @@ import kivy
 import math
 
 
-#import cnn_both as nn
+import cnn_both as nn
 import awesomecnn.tester
 #import awesomecnn.neuralnetwork as nnnn
-import numpy as nnnn
+#import numpy as nnnn
 
 import enum_local as LOAD
 
@@ -61,10 +61,10 @@ class IMEApp(App):
         self.pos = (0,0)
 
         self.process = False
-        '''
+        
         self.cnn =  nn.DualCNN()
         self.cnn.load_file()
-        '''
+        
         self.letter = ""
 
 
@@ -204,7 +204,7 @@ class IMEApp(App):
 
 
     def run_cnn(self):
-        '''
+        
         if self.process == True and self.touched_screen == True:
             self.normalize()
             self.cnn.set_input_type(self.load_type)
@@ -219,7 +219,7 @@ class IMEApp(App):
             self.process = False
             self.update_texture()
             return
-        '''
+        
         pass
 
     def normalize(self):
@@ -301,7 +301,7 @@ class IMEApp(App):
         self.touched_screen = False
 
     def shift_load_type(self):
-        '''
+        
         if self.load_type == LOAD.ALPHA:
             self.load_type = LOAD.NUMERIC
             self.load_letter = "#"
@@ -318,7 +318,7 @@ class IMEApp(App):
             self.load_letter = "A"
             self.cnn.set_input_type(self.load_type)
             return
-        '''
+        
         pass
 
 if __name__ == '__main__':

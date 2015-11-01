@@ -205,42 +205,43 @@ class NeuralNetwork:
                     
                     
                     if True:
-                    #try:
-                        
-                        GetText = jnius.autoclass("org.renpy.android.GetText")
-                        PythonActivity = jnius.autoclass('org.renpy.android.PythonActivity')
-
-                        currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
-                        
-                        
-                        loader = GetText()
-                        textw1 = str(name+'_w'+str(i+1))
-                        shapew1 = str(name+'_shape_w'+str(i+1))
-                        textb1 = str(name+'_b'+str(i+1))
-                        shapeb1 = str(name+'_shape_b'+str(i+1))
-                        activity = currentActivity
-                        #activity = PythonActivity.mActivity
-
-                        wshape = loader.getText(activity, shapew1)
-                        wtext = loader.getText(activity, textw1)
-                        bshape = loader.getText(activity, shapeb1)
-                        btext = loader.getText(activity, textb1)
-
-
-                        Win = [float(x) for x in wtext.split(' ')]
-                        bin = [float(x) for x in btext.split(' ')]
-
-                        Wshapein = [float(x.strip()) for x in wshape.splitlines()]
-                        bshapein = [float(x.strip()) for x in bshape.splitlines()]
-
-                        self.layers[i].W = store.unstore_w(Win,Wshapein)
-                        self.layers[i].b = store.unstore_b(bin,bshapein)
-                        
-                        
-                    #except:
-                        #exit()
-                        #print("not loading android weights")
                     
+                        try:
+                            
+                            GetText = jnius.autoclass("org.renpy.android.GetText")
+                            PythonActivity = jnius.autoclass('org.renpy.android.PythonActivity')
+
+                            currentActivity = jnius.cast('android.app.Activity', PythonActivity.mActivity)
+                            
+                            
+                            loader = GetText()
+                            textw1 = str(name+'_w'+str(i+1))
+                            shapew1 = str(name+'_shape_w'+str(i+1))
+                            textb1 = str(name+'_b'+str(i+1))
+                            shapeb1 = str(name+'_shape_b'+str(i+1))
+                            activity = currentActivity
+                            #activity = PythonActivity.mActivity
+
+                            wshape = loader.getText(activity, shapew1)
+                            wtext = loader.getText(activity, textw1)
+                            bshape = loader.getText(activity, shapeb1)
+                            btext = loader.getText(activity, textb1)
+
+
+                            Win = [float(x) for x in wtext.split(' ')]
+                            bin = [float(x) for x in btext.split(' ')]
+
+                            Wshapein = [float(x.strip()) for x in wshape.splitlines()]
+                            bshapein = [float(x.strip()) for x in bshape.splitlines()]
+
+                            self.layers[i].W = store.unstore_w(Win,Wshapein)
+                            self.layers[i].b = store.unstore_b(bin,bshapein)
+                            
+                            
+                        except:
+                            exit()
+                            #print("not loading android weights")
+                        
                     pass
             
     def append_status(self, name, message):
