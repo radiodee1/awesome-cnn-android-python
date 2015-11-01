@@ -5,11 +5,9 @@ import kivy
 #import os
 import math
 
-
 import cnn_both as nn
-import awesomecnn.tester
-#import awesomecnn.neuralnetwork as nnnn
-#import numpy as nnnn
+
+#import numpy 
 
 import enum_local as LOAD
 
