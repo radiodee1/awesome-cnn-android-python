@@ -31,7 +31,7 @@ PY4ADIST=~/.local/share/python-for-android/
 GIT_URL_KIVY=https://github.com/kivy/python-for-android.git
 GIT_URL_HOME=https://github.com/radiodee1/python-for-android.git
 
-GIT_CLONE=$GIT_URL_HOME
+GIT_CLONE=$GIT_URL_KIVY
 
 
 
