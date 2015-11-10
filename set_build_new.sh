@@ -33,6 +33,12 @@ GIT_URL_HOME=https://github.com/radiodee1/python-for-android.git
 
 GIT_CLONE=$GIT_URL_HOME
 
+
+
+if [ -d $CODEDIR/awesomecnn ]; then
+    rm -fr $CODEDIR/awesomecnn 
+fi
+
 if [ ! -d $PY4ADIR ]; then
 
     ## download master ##
