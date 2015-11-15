@@ -14,6 +14,7 @@ PY4ADIR=~/workspace/python-for-android-old/
 echo arguments: $#
 echo call: $0
 
+
 if [ ! -d $PY4ADIR ]; then
     cd ~/workspace/
     git clone -b old_toolchain https://github.com/kivy/python-for-android.git $PY4ADIR
