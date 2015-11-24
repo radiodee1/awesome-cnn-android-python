@@ -40,6 +40,10 @@ fi
 
 if [ ! -d $PY4ADIR ]; then
 
+    ## remove hidden files ##
+    p4a clean_builds
+    sudo rm -fr $PY4ADIST
+
     ## download master ##
     cd ~/workspace/
     git clone -b master $GIT_CLONE
@@ -52,8 +56,8 @@ if [ ! -d $PY4ADIR ]; then
     cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_DIR/src/$FILENAME
     
     ## remove folder from recipes
-    rm -fr $PY4ADIR/$REMOVE_FOLDER1
-    rm -fr $PY4ADIR/$REMOVE_FOLDER2
+    #rm -fr $PY4ADIR/$REMOVE_FOLDER1
+    #rm -fr $PY4ADIR/$REMOVE_FOLDER2
     #echo $PY4ADIR/$REMOVE_FOLDER1
     #echo $PY4ADIR/$REMOVE_FOLDER2
     
