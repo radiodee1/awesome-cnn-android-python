@@ -95,7 +95,7 @@ if [ "$#" != "0" ]; then
       
 fi
 
-python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
+python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007 --orientation=portrait
 
 
 
