@@ -34,7 +34,6 @@ GIT_URL_HOME=https://github.com/radiodee1/python-for-android.git
 GIT_CLONE=$GIT_URL_KIVY
 
 
-
 if [ -d $CODEDIR/awesomecnn ]; then
     rm -fr $CODEDIR/awesomecnn 
 fi
@@ -82,7 +81,21 @@ python-for-android create --debug --force_build True \
 
 cd $BUILDOZERDIR
 
-#~/.local/bin/python-for-android apk --private $BUILDOZERDIR/code/main.py --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
+if [ "$#" = "0" ]; then
+    cp -R $BUILDOZERDIR/module/awesomecnn $BUILDOZERDIR/code/.
+    rm -f $BUILDOZERDIR/code/awesomecnn/convnet/*x.pyx
+    echo "copy awesomecnn here"
+fi
+
+if [ "$#" != "0" ]; then
+
+    if [ -d $CODEDIR/awesomecnn ]; then
+        rm -fr $CODEDIR/awesomecnn 
+    fi
+      
+fi
+
+python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007
 
 
 
