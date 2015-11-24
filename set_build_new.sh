@@ -75,8 +75,8 @@ fi
 cd $BUILDOZERDIR
 
 ## build distribution ##
-~/.local/bin/python-for-android create --debug --force_build True \
-    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=numpy
+python-for-android create --debug --force_build True \
+    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=numpy,pyjnius,kivy
 
 #awesomecnn,numpy,pyjnius,kivy
 
