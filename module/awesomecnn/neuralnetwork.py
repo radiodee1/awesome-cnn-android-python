@@ -1,7 +1,12 @@
 
 
 import numpy as np
-import jnius
+
+try:
+    import jnius
+except:
+    pass
+
 from layers import ParamMixin
 from helpers import one_hot, unhot
 import enum_local as LOAD
@@ -239,8 +244,8 @@ class NeuralNetwork:
                             
                             
                         except:
-                            exit()
-                            #print("not loading android weights")
+                            #exit()
+                            print("not loading android weights")
                         
                     pass
             

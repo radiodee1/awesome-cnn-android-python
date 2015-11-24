@@ -53,7 +53,8 @@ if [ ! -d $PY4ADIR ]; then
     cp -R $BUILDOZERDIR/recipes/* $PY4ADIR/pythonforandroid/recipes/.
     
     ## home made java parts ##
-    cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_DIR/src/$FILENAME
+    cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_PYGAME/src/$FILENAME
+    cp -pR $PROJECTDIR/$FILENAME $PY4ADIR/$BACKEND_SDL2/src/$FILENAME
     
     ## remove folder from recipes
     #rm -fr $PY4ADIR/$REMOVE_FOLDER1

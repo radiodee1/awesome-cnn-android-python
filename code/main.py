@@ -2,12 +2,11 @@ import kivy
 #kivy.require('1.9.1') # replace with your current kivy version !
 
 
-#import os
+
 import math
 
 import cnn_both as nn
 
-#import numpy 
 
 import enum_local as LOAD
 
