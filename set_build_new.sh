@@ -33,11 +33,14 @@ GIT_URL_HOME=https://github.com/radiodee1/python-for-android.git
 
 GIT_CLONE=$GIT_URL_KIVY
 
+REQUIREMENTS=numpy,pyjnius,kivy
 
+## what if last build was old_toolchain ##
 if [ -d $CODEDIR/awesomecnn ]; then
     rm -fr $CODEDIR/awesomecnn 
 fi
 
+## what if no source is present ##
 if [ ! -d $PY4ADIR ]; then
 
     ## remove hidden files ##
@@ -74,15 +77,6 @@ if [ ! -d $PY4ADIR ]; then
     
 fi
 
-# p4a clean_builds
-
-cd $BUILDOZERDIR
-
-## build distribution ##
-python-for-android create --debug --force_build True \
-    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=numpy,pyjnius,kivy
-
-#awesomecnn,numpy,pyjnius,kivy
 
 cd $BUILDOZERDIR
 
@@ -97,10 +91,18 @@ if [ "$#" != "0" ]; then
     if [ -d $CODEDIR/awesomecnn ]; then
         rm -fr $CODEDIR/awesomecnn 
     fi
-      
+
+    REQUIREMENTS=$REQUIREMENTS,awesomecnn
+    echo $REQUIREMENTS
 fi
 
-python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007 --orientation=portrait
+## build distribution ##
+#python-for-android create --debug --force_build True \
+#    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=$REQUIREMENTS
+
+#awesomecnn,numpy,pyjnius,kivy
+
+## python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007 --orientation=portrait
 
 
 
