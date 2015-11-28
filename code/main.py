@@ -6,7 +6,7 @@ import kivy
 import math
 
 ##import cnn_both as nn
-
+import numpy as np
 
 import enum_local as LOAD
 
