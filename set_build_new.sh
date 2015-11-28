@@ -97,13 +97,15 @@ if [ "$#" != "0" ]; then
 fi
 
 ## build distribution ##
-#python-for-android create --debug --force_build True \
-#    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=$REQUIREMENTS
+python-for-android create --debug --force_build True \
+    --dist_name=AwesomeCNN --bootstrap=pygame --requirements=$REQUIREMENTS 
+
 
 #awesomecnn,numpy,pyjnius,kivy
 
-## python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN --name="Awesome CNN" --version=1.0.0.20151007 --orientation=portrait
-
+ python-for-android apk --private $BUILDOZERDIR/code --package=org.davidliebman.android.CNN \
+    --name="Awesome CNN" --version=1.0.0.20151007 --orientation=portrait \
+    --presplash=$BUILDOZERDIR/code/data/guy_icon.png --icon=$BUILDOZERDIR/code/data/guy_icon.png
 
 
 

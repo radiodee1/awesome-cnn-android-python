@@ -5,7 +5,7 @@ import kivy
 
 import math
 
-import cnn_both as nn
+##import cnn_both as nn
 
 
 import enum_local as LOAD
@@ -59,8 +59,8 @@ class IMEApp(App):
 
         self.process = False
         
-        self.cnn =  nn.DualCNN()
-        self.cnn.load_file()
+        ##self.cnn =  nn.DualCNN()
+        ##self.cnn.load_file()
         
         self.letter = ""
 
@@ -143,7 +143,7 @@ class IMEApp(App):
     '''
 
     def on_motion(self, window, etype, motionevent):
-
+        
         if motionevent.pos[0] + motionevent.pos[1] != 0 :
             self.pos = motionevent.pos
             x = math.ceil((self.pos[0] - (self.screenpos[0] - self.project ))/   self.project)
@@ -154,7 +154,7 @@ class IMEApp(App):
                 self.touched_screen = True
 
         self.update_texture()
-        self.run_cnn()
+        ##self.run_cnn()
         self.bottom.text = str(str(self.pos[0]) + " - " + str(self.pos[1]) +
                                "  " + str(self.load_letter) + " [" + str(self.letter) + "]")
         self.label_top.text = self.list_txt
@@ -201,7 +201,7 @@ class IMEApp(App):
 
 
     def run_cnn(self):
-        
+        '''
         if self.process == True and self.touched_screen == True:
             self.normalize()
             self.cnn.set_input_type(self.load_type)
@@ -216,7 +216,7 @@ class IMEApp(App):
             self.process = False
             self.update_texture()
             return
-        
+        '''
         pass
 
     def normalize(self):
@@ -298,7 +298,7 @@ class IMEApp(App):
         self.touched_screen = False
 
     def shift_load_type(self):
-        
+        '''
         if self.load_type == LOAD.ALPHA:
             self.load_type = LOAD.NUMERIC
             self.load_letter = "#"
@@ -315,7 +315,7 @@ class IMEApp(App):
             self.load_letter = "A"
             self.cnn.set_input_type(self.load_type)
             return
-        
+        '''
         pass
 
 if __name__ == '__main__':
